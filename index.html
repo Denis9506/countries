@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Countries & Capitals Explorer | Країни та столиці світу</title>
+  <meta name="description" content="Explore world countries, capitals, phonetic pronunciations, demonyms, and flags across 5 continental regions. Available in English and Ukrainian.">
+  
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="bg-glow glow-1" aria-hidden="true"></div>
+  <div class="bg-glow glow-2" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <div class="logo-area">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <h1 class="logo-title" id="logoTitle">TerraAtlas</h1>
+          <span class="logo-subtitle" id="logoSubtitle">Capitals, Pronunciations & Demonyms</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Quick stats badge -->
+        <div class="stats-pill" id="statsPill">
+          <span class="stats-count" id="countriesTotalCount">199</span>
+          <span class="stats-label" id="countriesTotalLabel">Countries</span>
+        </div>
+
+        <!-- Language Switcher Toggle -->
+        <button class="lang-toggle-btn" id="langToggleBtn" type="button" aria-label="Switch language between English and Ukrainian">
+          <span class="lang-flag" id="langFlag">🇺🇦</span>
+          <span class="lang-text" id="langText">Українська</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Controls Section -->
+  <main class="main-content">
+    <section class="hero-section">
+      <div class="hero-content">
+        <span class="hero-badge" id="heroBadge">Global Compendium</span>
+        <h2 class="hero-heading" id="heroHeading">Explore Nations Across the Globe</h2>
+        <p class="hero-description" id="heroDescription">
+          Discover countries grouped by region with official capitals, phonetic pronunciations, demonyms, and national flags.
+        </p>
+      </div>
+
+      <!-- Controls: Search and Filter Bar -->
+      <div class="controls-wrapper">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Search by country, capital, or demonym..." 
+            aria-label="Search countries"
+            autocomplete="off"
+            spellcheck="false"
+          >
+          <button class="clear-search-btn" id="clearSearchBtn" type="button" aria-label="Clear search" title="Clear search">
+            &times;
+          </button>
+        </div>
+
+        <!-- Region Navigation Pills -->
+        <nav class="region-nav" id="regionNav" aria-label="Region filters">
+          <!-- Populated dynamically via JS -->
+        </nav>
+      </div>
+
+      <!-- Active search status / results count -->
+      <div class="results-bar" id="resultsBar">
+        <span id="resultsCountText">Showing 199 countries</span>
+      </div>
+    </section>
+
+    <!-- Region Sections Container -->
+    <section class="regions-container" id="regionsContainer">
+      <!-- Dynamic region groups with country cards -->
+    </section>
+
+    <!-- Empty search state -->
+    <div class="empty-state hidden" id="emptyState">
+      <div class="empty-icon" aria-hidden="true">🔍</div>
+      <h3 class="empty-title" id="emptyTitle">No Countries Found</h3>
+      <p class="empty-desc" id="emptyDesc">Try adjusting your search query or switching to all regions.</p>
+      <button class="btn-reset-filter" id="btnResetFilter" type="button">Reset Filters</button>
+    </div>
+  </main>
+
+  <!-- Expanded Country Card / Modal Dialog -->
+  <div class="modal-backdrop hidden" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalCountryName">
+    <div class="modal-card" id="modalCard">
+      <!-- Top header bar in modal -->
+      <div class="modal-header">
+        <div class="modal-region-badge" id="modalRegionBadge">Europe</div>
+        <div class="modal-actions-top">
+          <button class="modal-nav-btn" id="modalPrevBtn" type="button" title="Previous Country (Left Arrow)" aria-label="Previous Country">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="modal-nav-btn" id="modalNextBtn" type="button" title="Next Country (Right Arrow)" aria-label="Next Country">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <button class="modal-close-btn" id="modalCloseBtn" type="button" title="Close (Escape)" aria-label="Close details">
+            &times;
+          </button>
+        </div>
+      </div>
+
+      <!-- Flag Hero Preview -->
+      <div class="modal-flag-wrapper">
+        <img 
+          id="modalFlagImg" 
+          class="modal-flag-img" 
+          src="" 
+          alt="Country Flag" 
+          loading="lazy"
+        >
+        <div class="modal-flag-overlay" aria-hidden="true"></div>
+      </div>
+
+      <!-- Country Titles & Phonetics -->
+      <div class="modal-title-row">
+        <div class="modal-name-group">
+          <h2 class="modal-country-name" id="modalCountryName">Country Name</h2>
+          <div class="modal-ipa-pill" id="modalCountryTransWrap">
+            <span class="ipa-symbol" aria-hidden="true">🗣️</span>
+            <span class="modal-transcription" id="modalCountryTrans">[transcription]</span>
+            <button class="speech-btn" id="speechBtn" type="button" title="Listen to pronunciation" aria-label="Pronounce country name">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail Grid: Capital, Demonym, Region, ISO -->
+      <div class="modal-details-grid">
+        <!-- Capital Box -->
+        <div class="detail-box">
+          <div class="detail-label-row">
+            <span class="detail-icon" aria-hidden="true">🏛️</span>
+            <span class="detail-label" id="labelCapital">Capital City</span>
+          </div>
+          <div class="detail-value-row">
+            <div class="detail-value" id="modalCapitalVal">Capital</div>
+            <button class="speech-btn capital-speech-btn" id="capitalSpeechBtn" type="button" title="Listen to capital pronunciation" aria-label="Pronounce capital city">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="detail-subvalue" id="modalCapitalTransVal"></div>
+        </div>
+
+        <!-- Demonym Box -->
+        <div class="detail-box">
+          <div class="detail-label-row">
+            <span class="detail-icon" aria-hidden="true">👥</span>
+            <span class="detail-label" id="labelDemonym">Demonym (Residents)</span>
+          </div>
+          <div class="detail-value" id="modalDemonymVal">Demonym</div>
+        </div>
+
+        <!-- Region Box -->
+        <div class="detail-box">
+          <div class="detail-label-row">
+            <span class="detail-icon" aria-hidden="true">🌍</span>
+            <span class="detail-label" id="labelRegion">Region / Continent</span>
+          </div>
+          <div class="detail-value" id="modalRegionVal">Region</div>
+        </div>
+
+        <!-- ISO / Flag Info Box -->
+        <div class="detail-box">
+          <div class="detail-label-row">
+            <span class="detail-icon" aria-hidden="true">🚩</span>
+            <span class="detail-label" id="labelIsoCode">ISO Code & Flag</span>
+          </div>
+          <div class="detail-value iso-code-text" id="modalIsoVal">ISO</div>
+          <a class="flag-direct-link" id="modalFlagDirectLink" href="#" target="_blank" rel="noopener noreferrer">
+            <span id="labelOpenFlagLink">View direct flag image ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <span class="modal-tip-text" id="modalTipText">Keyboard shortcuts: ← Previous | → Next | Esc to Close</span>
+        <button class="modal-btn-done" id="modalBtnDone" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p class="footer-title">TerraAtlas • World Capitals Compendium</p>
+        <p class="footer-desc" id="footerDesc">Curated from Capitals of the world dataset. Free and open explorer.</p>
+      </div>
+      <div class="footer-right">
+        <span class="badge-tag">Vanilla JS</span>
+        <span class="badge-tag">Zero Backend</span>
+        <span class="badge-tag">GitHub Pages Ready</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Load Database and Application Scripts -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
