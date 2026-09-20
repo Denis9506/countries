@@ -961,6 +961,246 @@ body {
   text-decoration: underline;
 }
 
+/* Interactive Country Location Map Section */
+.modal-map-section {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: border-color var(--tr-fast), box-shadow var(--tr-fast);
+}
+
+.modal-map-section:hover {
+  border-color: rgba(249, 115, 22, 0.35);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.modal-map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: rgba(10, 14, 23, 0.85);
+  border-bottom: 1px solid var(--border-subtle);
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.modal-map-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.modal-map-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.modal-map-coords {
+  font-family: 'Outfit', monospace, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--orange-300);
+  background: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.28);
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.02em;
+}
+
+.modal-map-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.map-reset-btn,
+.map-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--tr-fast);
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+}
+
+.map-reset-btn svg,
+.map-link-btn svg {
+  width: 13px;
+  height: 13px;
+}
+
+.map-reset-btn:hover,
+.map-link-btn:hover {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: var(--orange-500);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.modal-map-frame {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: #e5e3df;
+  cursor: grab;
+}
+
+.modal-map-frame:active {
+  cursor: grabbing;
+}
+
+.modal-map-canvas {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Custom Google Maps Style Pulse Marker */
+.map-pulse-marker {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-marker-pin {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ea4335;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45), 0 0 14px rgba(234, 67, 53, 0.7);
+  z-index: 2;
+  position: relative;
+}
+
+.map-marker-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 38px;
+  height: 38px;
+  margin-top: -19px;
+  margin-left: -19px;
+  border-radius: 50%;
+  background: rgba(234, 67, 53, 0.4);
+  animation: mapPinPulse 2.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes mapPinPulse {
+  0% {
+    transform: scale(0.3);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Leaflet Google Maps Theme Overrides */
+.leaflet-container {
+  background-color: #e5e3df !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+  outline: none;
+}
+
+.leaflet-bar {
+  border: none !important;
+  border-radius: 6px !important;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+  margin: 12px !important;
+}
+
+.leaflet-bar a {
+  background-color: #ffffff !important;
+  color: #3c4043 !important;
+  border-bottom: 1px solid #dadce0 !important;
+  width: 32px !important;
+  height: 32px !important;
+  line-height: 32px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  transition: all var(--tr-fast) !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: #f1f3f4 !important;
+  color: #1a73e8 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.82) !important;
+  color: #5f6368 !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(4px);
+  border-radius: 3px 0 0 0;
+  padding: 2px 6px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #1a73e8 !important;
+  text-decoration: none;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #202124 !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22) !important;
+  border-radius: 8px !important;
+  padding: 4px 6px !important;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.map-popup-inner {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-align: center;
+  padding: 4px 6px;
+}
+
+.map-popup-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #202124;
+  margin-bottom: 2px;
+}
+
+.map-popup-subtitle {
+  font-size: 0.78rem;
+  color: #ea580c;
+  font-weight: 600;
+}
+
 /* Modal Footer */
 .modal-footer {
   display: flex;
@@ -1401,6 +1641,14 @@ body {
 
   .detail-value {
     font-size: 1.05rem;
+  }
+
+  .modal-map-frame {
+    height: 200px;
+  }
+
+  .modal-map-header {
+    padding: 0.65rem 0.8rem;
   }
 
   .modal-footer {

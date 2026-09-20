@@ -18,6 +18,8 @@ const countriesData = [
         "demonym":  "Albanian",
         "iso2":  "al",
         "flagUrl":  "https://flagcdn.com/w320/al.png",
+        "coordinates":  [41, 20],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Албанія",
@@ -37,6 +39,8 @@ const countriesData = [
         "demonym":  "Andorran",
         "iso2":  "ad",
         "flagUrl":  "https://flagcdn.com/w320/ad.png",
+        "coordinates":  [42.5, 1.5],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Андорра",
@@ -56,6 +60,8 @@ const countriesData = [
         "demonym":  "Austrian",
         "iso2":  "at",
         "flagUrl":  "https://flagcdn.com/w320/at.png",
+        "coordinates":  [47.33333333, 13.33333333],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Австрія",
@@ -75,6 +81,8 @@ const countriesData = [
         "demonym":  "Belarusian",
         "iso2":  "by",
         "flagUrl":  "https://flagcdn.com/w320/by.png",
+        "coordinates":  [53, 28],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Білорусь",
@@ -94,6 +102,8 @@ const countriesData = [
         "demonym":  "Belgian",
         "iso2":  "be",
         "flagUrl":  "https://flagcdn.com/w320/be.png",
+        "coordinates":  [50.83333333, 4],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Бельгія",
@@ -113,6 +123,8 @@ const countriesData = [
         "demonym":  "Bosnian, Herzegovinian",
         "iso2":  "ba",
         "flagUrl":  "https://flagcdn.com/w320/ba.png",
+        "coordinates":  [44, 18],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Боснія і Герцеговина",
@@ -132,6 +144,8 @@ const countriesData = [
         "demonym":  "Bulgarian",
         "iso2":  "bg",
         "flagUrl":  "https://flagcdn.com/w320/bg.png",
+        "coordinates":  [43, 25],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Болгарія",
@@ -151,6 +165,8 @@ const countriesData = [
         "demonym":  "Croatian, Croat",
         "iso2":  "hr",
         "flagUrl":  "https://flagcdn.com/w320/hr.png",
+        "coordinates":  [45.16666666, 15.5],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Хорватія",
@@ -170,6 +186,8 @@ const countriesData = [
         "demonym":  "Czech",
         "iso2":  "cz",
         "flagUrl":  "https://flagcdn.com/w320/cz.png",
+        "coordinates":  [49.75, 15.5],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Чехія",
@@ -189,6 +207,8 @@ const countriesData = [
         "demonym":  "Dane",
         "iso2":  "dk",
         "flagUrl":  "https://flagcdn.com/w320/dk.png",
+        "coordinates":  [56, 10],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Данія",
@@ -208,6 +228,8 @@ const countriesData = [
         "demonym":  "Estonian",
         "iso2":  "ee",
         "flagUrl":  "https://flagcdn.com/w320/ee.png",
+        "coordinates":  [59, 26],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Естонія",
@@ -227,6 +249,8 @@ const countriesData = [
         "demonym":  "Finn",
         "iso2":  "fi",
         "flagUrl":  "https://flagcdn.com/w320/fi.png",
+        "coordinates":  [64, 26],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Фінляндія",
@@ -246,6 +270,8 @@ const countriesData = [
         "demonym":  "Frenchman",
         "iso2":  "fr",
         "flagUrl":  "https://flagcdn.com/w320/fr.png",
+        "coordinates":  [46, 2],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Франція",
@@ -265,6 +291,8 @@ const countriesData = [
         "demonym":  "Georgian",
         "iso2":  "ge",
         "flagUrl":  "https://flagcdn.com/w320/ge.png",
+        "coordinates":  [42, 43.5],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Грузія",
@@ -284,6 +312,8 @@ const countriesData = [
         "demonym":  "German",
         "iso2":  "de",
         "flagUrl":  "https://flagcdn.com/w320/de.png",
+        "coordinates":  [51, 9],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Німеччина",
@@ -303,6 +333,8 @@ const countriesData = [
         "demonym":  "Greek",
         "iso2":  "gr",
         "flagUrl":  "https://flagcdn.com/w320/gr.png",
+        "coordinates":  [39, 22],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Греція",
@@ -322,6 +354,8 @@ const countriesData = [
         "demonym":  "Hungarian",
         "iso2":  "hu",
         "flagUrl":  "https://flagcdn.com/w320/hu.png",
+        "coordinates":  [47, 20],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Угорщина",
@@ -341,6 +375,8 @@ const countriesData = [
         "demonym":  "Icelander",
         "iso2":  "is",
         "flagUrl":  "https://flagcdn.com/w320/is.png",
+        "coordinates":  [65, -18],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Ісландія",
@@ -360,6 +396,8 @@ const countriesData = [
         "demonym":  "Irish, Irishman",
         "iso2":  "ie",
         "flagUrl":  "https://flagcdn.com/w320/ie.png",
+        "coordinates":  [53, -8],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Ірландія",
@@ -379,6 +417,8 @@ const countriesData = [
         "demonym":  "Italian",
         "iso2":  "it",
         "flagUrl":  "https://flagcdn.com/w320/it.png",
+        "coordinates":  [42.83333333, 12.83333333],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Італія",
@@ -398,6 +438,8 @@ const countriesData = [
         "demonym":  "Latvian",
         "iso2":  "lv",
         "flagUrl":  "https://flagcdn.com/w320/lv.png",
+        "coordinates":  [57, 25],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Латвія",
@@ -417,6 +459,8 @@ const countriesData = [
         "demonym":  "Liechtensteiner",
         "iso2":  "li",
         "flagUrl":  "https://flagcdn.com/w320/li.png",
+        "coordinates":  [47.26666666, 9.53333333],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Ліхтенштейн",
@@ -436,6 +480,8 @@ const countriesData = [
         "demonym":  "Lithuanian",
         "iso2":  "lt",
         "flagUrl":  "https://flagcdn.com/w320/lt.png",
+        "coordinates":  [56, 24],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Литва",
@@ -455,6 +501,8 @@ const countriesData = [
         "demonym":  "Luxembourger",
         "iso2":  "lu",
         "flagUrl":  "https://flagcdn.com/w320/lu.png",
+        "coordinates":  [49.75, 6.16666666],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Люксембург",
@@ -474,6 +522,8 @@ const countriesData = [
         "demonym":  "Macedonian",
         "iso2":  "mk",
         "flagUrl":  "https://flagcdn.com/w320/mk.png",
+        "coordinates":  [41.83333333, 22],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Північна Македонія",
@@ -493,6 +543,8 @@ const countriesData = [
         "demonym":  "Maltese",
         "iso2":  "mt",
         "flagUrl":  "https://flagcdn.com/w320/mt.png",
+        "coordinates":  [35.83333333, 14.58333333],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Мальта",
@@ -512,6 +564,8 @@ const countriesData = [
         "demonym":  "Moldovan",
         "iso2":  "md",
         "flagUrl":  "https://flagcdn.com/w320/md.png",
+        "coordinates":  [47, 29],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Молдова",
@@ -531,6 +585,8 @@ const countriesData = [
         "demonym":  "Monacan",
         "iso2":  "mc",
         "flagUrl":  "https://flagcdn.com/w320/mc.png",
+        "coordinates":  [43.73333333, 7.4],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Монако",
@@ -550,6 +606,8 @@ const countriesData = [
         "demonym":  "Montenegrin",
         "iso2":  "me",
         "flagUrl":  "https://flagcdn.com/w320/me.png",
+        "coordinates":  [42.5, 19.3],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Чорногорія",
@@ -569,6 +627,8 @@ const countriesData = [
         "demonym":  "Dutchman, Netherlander",
         "iso2":  "nl",
         "flagUrl":  "https://flagcdn.com/w320/nl.png",
+        "coordinates":  [52.5, 5.75],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Нідерланди",
@@ -588,6 +648,8 @@ const countriesData = [
         "demonym":  "Norwegian",
         "iso2":  "no",
         "flagUrl":  "https://flagcdn.com/w320/no.png",
+        "coordinates":  [62, 10],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Норвегія",
@@ -607,6 +669,8 @@ const countriesData = [
         "demonym":  "Pole",
         "iso2":  "pl",
         "flagUrl":  "https://flagcdn.com/w320/pl.png",
+        "coordinates":  [52, 20],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Польща",
@@ -626,6 +690,8 @@ const countriesData = [
         "demonym":  "Portuguese",
         "iso2":  "pt",
         "flagUrl":  "https://flagcdn.com/w320/pt.png",
+        "coordinates":  [39.5, -8],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Португалія",
@@ -645,6 +711,8 @@ const countriesData = [
         "demonym":  "Romanian",
         "iso2":  "ro",
         "flagUrl":  "https://flagcdn.com/w320/ro.png",
+        "coordinates":  [46, 25],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Румунія",
@@ -664,6 +732,8 @@ const countriesData = [
         "demonym":  "Russian",
         "iso2":  "ru",
         "flagUrl":  "https://flagcdn.com/w320/ru.png",
+        "coordinates":  [60, 100],
+        "zoom":  3,
         "translations":  {
                              "uk":  {
                                         "country":  "Російська Федерація",
@@ -683,6 +753,8 @@ const countriesData = [
         "demonym":  "Sammarinese",
         "iso2":  "sm",
         "flagUrl":  "https://flagcdn.com/w320/sm.png",
+        "coordinates":  [43.76666666, 12.41666666],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Сан-Марино",
@@ -702,6 +774,8 @@ const countriesData = [
         "demonym":  "Serb",
         "iso2":  "rs",
         "flagUrl":  "https://flagcdn.com/w320/rs.png",
+        "coordinates":  [44, 21],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Сербія",
@@ -721,6 +795,8 @@ const countriesData = [
         "demonym":  "Slovak",
         "iso2":  "sk",
         "flagUrl":  "https://flagcdn.com/w320/sk.png",
+        "coordinates":  [48.66666666, 19.5],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Словаччина",
@@ -740,6 +816,8 @@ const countriesData = [
         "demonym":  "Slovene",
         "iso2":  "si",
         "flagUrl":  "https://flagcdn.com/w320/si.png",
+        "coordinates":  [46.11666666, 14.81666666],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Словенія",
@@ -759,6 +837,8 @@ const countriesData = [
         "demonym":  "Spaniard",
         "iso2":  "es",
         "flagUrl":  "https://flagcdn.com/w320/es.png",
+        "coordinates":  [40, -4],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Іспанія",
@@ -778,6 +858,8 @@ const countriesData = [
         "demonym":  "Swede",
         "iso2":  "se",
         "flagUrl":  "https://flagcdn.com/w320/se.png",
+        "coordinates":  [62, 15],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Швеція",
@@ -797,6 +879,8 @@ const countriesData = [
         "demonym":  "Swiss",
         "iso2":  "ch",
         "flagUrl":  "https://flagcdn.com/w320/ch.png",
+        "coordinates":  [47, 8],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Швейцарія",
@@ -816,6 +900,8 @@ const countriesData = [
         "demonym":  "British",
         "iso2":  "gb",
         "flagUrl":  "https://flagcdn.com/w320/gb.png",
+        "coordinates":  [54, -2],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Велика Британія",
@@ -835,6 +921,8 @@ const countriesData = [
         "demonym":  "Englishman",
         "iso2":  "gb-eng",
         "flagUrl":  "https://flagcdn.com/w320/gb-eng.png",
+        "coordinates":  [52.3555, -1.1743],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Англія",
@@ -854,6 +942,8 @@ const countriesData = [
         "demonym":  "Scot, Scotsman",
         "iso2":  "gb-sct",
         "flagUrl":  "https://flagcdn.com/w320/gb-sct.png",
+        "coordinates":  [56.4907, -4.2026],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Шотландія",
@@ -873,6 +963,8 @@ const countriesData = [
         "demonym":  "Welshman",
         "iso2":  "gb-wls",
         "flagUrl":  "https://flagcdn.com/w320/gb-wls.png",
+        "coordinates":  [52.1307, -3.7837],
+        "zoom":  7,
         "translations":  {
                              "uk":  {
                                         "country":  "Уельс",
@@ -892,6 +984,8 @@ const countriesData = [
         "demonym":  "Irishman",
         "iso2":  "gb-nir",
         "flagUrl":  "https://flagcdn.com/w320/gb-nir.png",
+        "coordinates":  [54.7877, -6.4923],
+        "zoom":  7,
         "translations":  {
                              "uk":  {
                                         "country":  "Північна Ірландія",
@@ -911,6 +1005,8 @@ const countriesData = [
         "demonym":  "Ukrainian",
         "iso2":  "ua",
         "flagUrl":  "https://flagcdn.com/w320/ua.png",
+        "coordinates":  [49, 32],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Україна",
@@ -930,6 +1026,8 @@ const countriesData = [
         "demonym":  "Vatican citizen",
         "iso2":  "va",
         "flagUrl":  "https://flagcdn.com/w320/va.png",
+        "coordinates":  [41.9, 12.45],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Ватикан",
@@ -949,6 +1047,8 @@ const countriesData = [
         "demonym":  "Afghan",
         "iso2":  "af",
         "flagUrl":  "https://flagcdn.com/w320/af.png",
+        "coordinates":  [33, 65],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Афганістан",
@@ -968,6 +1068,8 @@ const countriesData = [
         "demonym":  "Armenian",
         "iso2":  "am",
         "flagUrl":  "https://flagcdn.com/w320/am.png",
+        "coordinates":  [40, 45],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Вірменія",
@@ -987,6 +1089,8 @@ const countriesData = [
         "demonym":  "Azerbaijani",
         "iso2":  "az",
         "flagUrl":  "https://flagcdn.com/w320/az.png",
+        "coordinates":  [40.5, 47.5],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Азербайджан",
@@ -1006,6 +1110,8 @@ const countriesData = [
         "demonym":  "Bahraini",
         "iso2":  "bh",
         "flagUrl":  "https://flagcdn.com/w320/bh.png",
+        "coordinates":  [26, 50.55],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Бахрейн",
@@ -1025,6 +1131,8 @@ const countriesData = [
         "demonym":  "Bangladeshi",
         "iso2":  "bd",
         "flagUrl":  "https://flagcdn.com/w320/bd.png",
+        "coordinates":  [24, 90],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Бангладеш",
@@ -1044,6 +1152,8 @@ const countriesData = [
         "demonym":  "Bhutanese",
         "iso2":  "bt",
         "flagUrl":  "https://flagcdn.com/w320/bt.png",
+        "coordinates":  [27.5, 90.5],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Бутан",
@@ -1063,6 +1173,8 @@ const countriesData = [
         "demonym":  "Bruneian",
         "iso2":  "bn",
         "flagUrl":  "https://flagcdn.com/w320/bn.png",
+        "coordinates":  [4.5, 114.66666666],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Бруней",
@@ -1082,6 +1194,8 @@ const countriesData = [
         "demonym":  "Cambodian",
         "iso2":  "kh",
         "flagUrl":  "https://flagcdn.com/w320/kh.png",
+        "coordinates":  [13, 105],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Камбоджа",
@@ -1101,6 +1215,8 @@ const countriesData = [
         "demonym":  "Chinese",
         "iso2":  "cn",
         "flagUrl":  "https://flagcdn.com/w320/cn.png",
+        "coordinates":  [35, 105],
+        "zoom":  3,
         "translations":  {
                              "uk":  {
                                         "country":  "Китай",
@@ -1120,6 +1236,8 @@ const countriesData = [
         "demonym":  "Cypriot [ˈsipriət]",
         "iso2":  "cy",
         "flagUrl":  "https://flagcdn.com/w320/cy.png",
+        "coordinates":  [35, 33],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Кіпр",
@@ -1139,6 +1257,8 @@ const countriesData = [
         "demonym":  "Indian",
         "iso2":  "in",
         "flagUrl":  "https://flagcdn.com/w320/in.png",
+        "coordinates":  [20, 77],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Індія",
@@ -1158,6 +1278,8 @@ const countriesData = [
         "demonym":  "Indonesian",
         "iso2":  "id",
         "flagUrl":  "https://flagcdn.com/w320/id.png",
+        "coordinates":  [-5, 120],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Індонезія",
@@ -1177,6 +1299,8 @@ const countriesData = [
         "demonym":  "Iranian",
         "iso2":  "ir",
         "flagUrl":  "https://flagcdn.com/w320/ir.png",
+        "coordinates":  [32, 53],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Іран",
@@ -1196,6 +1320,8 @@ const countriesData = [
         "demonym":  "Iraqi",
         "iso2":  "iq",
         "flagUrl":  "https://flagcdn.com/w320/iq.png",
+        "coordinates":  [33, 44],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Ірак",
@@ -1215,6 +1341,8 @@ const countriesData = [
         "demonym":  "Israeli [izˈreili]",
         "iso2":  "il",
         "flagUrl":  "https://flagcdn.com/w320/il.png",
+        "coordinates":  [31.47, 35.13],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Ізраїль",
@@ -1234,6 +1362,8 @@ const countriesData = [
         "demonym":  "Japanese",
         "iso2":  "jp",
         "flagUrl":  "https://flagcdn.com/w320/jp.png",
+        "coordinates":  [36, 138],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Японія",
@@ -1253,6 +1383,8 @@ const countriesData = [
         "demonym":  "Jordanian",
         "iso2":  "jo",
         "flagUrl":  "https://flagcdn.com/w320/jo.png",
+        "coordinates":  [31, 36],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Йорданія",
@@ -1272,6 +1404,8 @@ const countriesData = [
         "demonym":  "Kazakh [ˈkazak, kəˈzak]",
         "iso2":  "kz",
         "flagUrl":  "https://flagcdn.com/w320/kz.png",
+        "coordinates":  [48, 68],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Казахстан",
@@ -1291,6 +1425,8 @@ const countriesData = [
         "demonym":  "Korean",
         "iso2":  "kp",
         "flagUrl":  "https://flagcdn.com/w320/kp.png",
+        "coordinates":  [40, 127],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Північна Корея",
@@ -1310,6 +1446,8 @@ const countriesData = [
         "demonym":  "Korean",
         "iso2":  "kr",
         "flagUrl":  "https://flagcdn.com/w320/kr.png",
+        "coordinates":  [37, 127.5],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Південна Корея",
@@ -1329,6 +1467,8 @@ const countriesData = [
         "demonym":  "Kuwaiti",
         "iso2":  "kw",
         "flagUrl":  "https://flagcdn.com/w320/kw.png",
+        "coordinates":  [29.5, 45.75],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Кувейт",
@@ -1348,6 +1488,8 @@ const countriesData = [
         "demonym":  "Kyrgyz [kiəˈgiːz]",
         "iso2":  "kg",
         "flagUrl":  "https://flagcdn.com/w320/kg.png",
+        "coordinates":  [41, 75],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Киргизстан",
@@ -1367,6 +1509,8 @@ const countriesData = [
         "demonym":  "Laotian [leiˈouʃən]",
         "iso2":  "la",
         "flagUrl":  "https://flagcdn.com/w320/la.png",
+        "coordinates":  [18, 105],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Лаос",
@@ -1386,6 +1530,8 @@ const countriesData = [
         "demonym":  "Lebanese",
         "iso2":  "lb",
         "flagUrl":  "https://flagcdn.com/w320/lb.png",
+        "coordinates":  [33.83333333, 35.83333333],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Ліван",
@@ -1405,6 +1551,8 @@ const countriesData = [
         "demonym":  "Malaysian",
         "iso2":  "my",
         "flagUrl":  "https://flagcdn.com/w320/my.png",
+        "coordinates":  [2.5, 112.5],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Малайзія",
@@ -1424,6 +1572,8 @@ const countriesData = [
         "demonym":  "Maldivian",
         "iso2":  "mv",
         "flagUrl":  "https://flagcdn.com/w320/mv.png",
+        "coordinates":  [3.25, 73],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Мальдіви",
@@ -1443,6 +1593,8 @@ const countriesData = [
         "demonym":  "Mongolian",
         "iso2":  "mn",
         "flagUrl":  "https://flagcdn.com/w320/mn.png",
+        "coordinates":  [46, 105],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Монголія",
@@ -1462,6 +1614,8 @@ const countriesData = [
         "demonym":  "Myanma",
         "iso2":  "mm",
         "flagUrl":  "https://flagcdn.com/w320/mm.png",
+        "coordinates":  [22, 98],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "М'янма",
@@ -1481,6 +1635,8 @@ const countriesData = [
         "demonym":  "Nepalese",
         "iso2":  "np",
         "flagUrl":  "https://flagcdn.com/w320/np.png",
+        "coordinates":  [28, 84],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Непал",
@@ -1500,6 +1656,8 @@ const countriesData = [
         "demonym":  "Omani",
         "iso2":  "om",
         "flagUrl":  "https://flagcdn.com/w320/om.png",
+        "coordinates":  [21, 57],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Оман",
@@ -1519,6 +1677,8 @@ const countriesData = [
         "demonym":  "Pakistani",
         "iso2":  "pk",
         "flagUrl":  "https://flagcdn.com/w320/pk.png",
+        "coordinates":  [30, 70],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Пакистан",
@@ -1538,6 +1698,8 @@ const countriesData = [
         "demonym":  "Filipino",
         "iso2":  "ph",
         "flagUrl":  "https://flagcdn.com/w320/ph.png",
+        "coordinates":  [13, 122],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Філіппіни",
@@ -1557,6 +1719,8 @@ const countriesData = [
         "demonym":  "Qatari",
         "iso2":  "qa",
         "flagUrl":  "https://flagcdn.com/w320/qa.png",
+        "coordinates":  [25.5, 51.25],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Катар",
@@ -1576,6 +1740,8 @@ const countriesData = [
         "demonym":  "Saudi Arabian",
         "iso2":  "sa",
         "flagUrl":  "https://flagcdn.com/w320/sa.png",
+        "coordinates":  [25, 45],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Саудівська Аравія",
@@ -1595,6 +1761,8 @@ const countriesData = [
         "demonym":  "Singaporean",
         "iso2":  "sg",
         "flagUrl":  "https://flagcdn.com/w320/sg.png",
+        "coordinates":  [1.36666666, 103.8],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Сінгапур",
@@ -1614,6 +1782,8 @@ const countriesData = [
         "demonym":  "Sri Lankan",
         "iso2":  "lk",
         "flagUrl":  "https://flagcdn.com/w320/lk.png",
+        "coordinates":  [7, 81],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Шрі-Ланка",
@@ -1633,6 +1803,8 @@ const countriesData = [
         "demonym":  "Syrian",
         "iso2":  "sy",
         "flagUrl":  "https://flagcdn.com/w320/sy.png",
+        "coordinates":  [35, 38],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Сирія",
@@ -1652,6 +1824,8 @@ const countriesData = [
         "demonym":  "Taiwanese",
         "iso2":  "tw",
         "flagUrl":  "https://flagcdn.com/w320/tw.png",
+        "coordinates":  [23.5, 121],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Тайвань",
@@ -1671,6 +1845,8 @@ const countriesData = [
         "demonym":  "Tajik [tɑːˈdʒiːk]",
         "iso2":  "tj",
         "flagUrl":  "https://flagcdn.com/w320/tj.png",
+        "coordinates":  [39, 71],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Таджикистан",
@@ -1690,6 +1866,8 @@ const countriesData = [
         "demonym":  "Thai",
         "iso2":  "th",
         "flagUrl":  "https://flagcdn.com/w320/th.png",
+        "coordinates":  [15, 100],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Таїланд",
@@ -1709,6 +1887,8 @@ const countriesData = [
         "demonym":  "East Timorese",
         "iso2":  "tl",
         "flagUrl":  "https://flagcdn.com/w320/tl.png",
+        "coordinates":  [-8.83333333, 125.91666666],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Східний Тимор",
@@ -1728,6 +1908,8 @@ const countriesData = [
         "demonym":  "Turk",
         "iso2":  "tr",
         "flagUrl":  "https://flagcdn.com/w320/tr.png",
+        "coordinates":  [39, 35],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Туреччина",
@@ -1747,6 +1929,8 @@ const countriesData = [
         "demonym":  "Turkmen",
         "iso2":  "tm",
         "flagUrl":  "https://flagcdn.com/w320/tm.png",
+        "coordinates":  [40, 60],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Туркменістан",
@@ -1766,6 +1950,8 @@ const countriesData = [
         "demonym":  "Emirati",
         "iso2":  "ae",
         "flagUrl":  "https://flagcdn.com/w320/ae.png",
+        "coordinates":  [24, 54],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Об'єднані Арабські Емірати",
@@ -1785,6 +1971,8 @@ const countriesData = [
         "demonym":  "Uzbek [ˈuzbek]",
         "iso2":  "uz",
         "flagUrl":  "https://flagcdn.com/w320/uz.png",
+        "coordinates":  [41, 64],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Узбекистан",
@@ -1804,6 +1992,8 @@ const countriesData = [
         "demonym":  "Vietnamese",
         "iso2":  "vn",
         "flagUrl":  "https://flagcdn.com/w320/vn.png",
+        "coordinates":  [16.16666666, 107.83333333],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "В'єтнам",
@@ -1823,6 +2013,8 @@ const countriesData = [
         "demonym":  "Yemeni",
         "iso2":  "ye",
         "flagUrl":  "https://flagcdn.com/w320/ye.png",
+        "coordinates":  [15, 48],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Ємен",
@@ -1842,6 +2034,8 @@ const countriesData = [
         "demonym":  "Algerian",
         "iso2":  "dz",
         "flagUrl":  "https://flagcdn.com/w320/dz.png",
+        "coordinates":  [28, 3],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Алжир",
@@ -1861,6 +2055,8 @@ const countriesData = [
         "demonym":  "Angolan",
         "iso2":  "ao",
         "flagUrl":  "https://flagcdn.com/w320/ao.png",
+        "coordinates":  [-12.5, 18.5],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Ангола",
@@ -1880,6 +2076,8 @@ const countriesData = [
         "demonym":  "Beninese",
         "iso2":  "bj",
         "flagUrl":  "https://flagcdn.com/w320/bj.png",
+        "coordinates":  [9.5, 2.25],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Бенін",
@@ -1899,6 +2097,8 @@ const countriesData = [
         "demonym":  "Motswana (singular), Batswana (plural)",
         "iso2":  "bw",
         "flagUrl":  "https://flagcdn.com/w320/bw.png",
+        "coordinates":  [-22, 24],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Ботсвана",
@@ -1918,6 +2118,8 @@ const countriesData = [
         "demonym":  "Burkinabe",
         "iso2":  "bf",
         "flagUrl":  "https://flagcdn.com/w320/bf.png",
+        "coordinates":  [13, -2],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Буркіна-Фасо",
@@ -1937,6 +2139,8 @@ const countriesData = [
         "demonym":  "Burundian",
         "iso2":  "bi",
         "flagUrl":  "https://flagcdn.com/w320/bi.png",
+        "coordinates":  [-3.5, 30],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Бурунді",
@@ -1956,6 +2160,8 @@ const countriesData = [
         "demonym":  "Cabo Verdean",
         "iso2":  "cv",
         "flagUrl":  "https://flagcdn.com/w320/cv.png",
+        "coordinates":  [16, -24],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Кабо-Верде",
@@ -1975,6 +2181,8 @@ const countriesData = [
         "demonym":  "Cameroonian",
         "iso2":  "cm",
         "flagUrl":  "https://flagcdn.com/w320/cm.png",
+        "coordinates":  [6, 12],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Камерун",
@@ -1994,6 +2202,8 @@ const countriesData = [
         "demonym":  "Central African",
         "iso2":  "cf",
         "flagUrl":  "https://flagcdn.com/w320/cf.png",
+        "coordinates":  [7, 21],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Центральноафриканська Республіка",
@@ -2013,6 +2223,8 @@ const countriesData = [
         "demonym":  "Chadian",
         "iso2":  "td",
         "flagUrl":  "https://flagcdn.com/w320/td.png",
+        "coordinates":  [15, 19],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Чад",
@@ -2032,6 +2244,8 @@ const countriesData = [
         "demonym":  "Comorian",
         "iso2":  "km",
         "flagUrl":  "https://flagcdn.com/w320/km.png",
+        "coordinates":  [-12.16666666, 44.25],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Коморські Острови",
@@ -2051,6 +2265,8 @@ const countriesData = [
         "demonym":  "Ivorian, Ivoirian",
         "iso2":  "ci",
         "flagUrl":  "https://flagcdn.com/w320/ci.png",
+        "coordinates":  [8, -5],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Кот-д'Івуар",
@@ -2070,6 +2286,8 @@ const countriesData = [
         "demonym":  "Congolese",
         "iso2":  "cg",
         "flagUrl":  "https://flagcdn.com/w320/cg.png",
+        "coordinates":  [-1, 15],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Республіка Конго",
@@ -2089,6 +2307,8 @@ const countriesData = [
         "demonym":  "Congolese",
         "iso2":  "cd",
         "flagUrl":  "https://flagcdn.com/w320/cd.png",
+        "coordinates":  [0, 25],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Демократична Республіка Конго",
@@ -2108,6 +2328,8 @@ const countriesData = [
         "demonym":  "Djiboutian",
         "iso2":  "dj",
         "flagUrl":  "https://flagcdn.com/w320/dj.png",
+        "coordinates":  [11.5, 43],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Джибуті",
@@ -2127,6 +2349,8 @@ const countriesData = [
         "demonym":  "Egyptian",
         "iso2":  "eg",
         "flagUrl":  "https://flagcdn.com/w320/eg.png",
+        "coordinates":  [27, 30],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Єгипет",
@@ -2146,6 +2370,8 @@ const countriesData = [
         "demonym":  "Equatorial Guinean, Equatoguinean",
         "iso2":  "gq",
         "flagUrl":  "https://flagcdn.com/w320/gq.png",
+        "coordinates":  [2, 10],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Екваторіальна Гвінея",
@@ -2165,6 +2391,8 @@ const countriesData = [
         "demonym":  "Eritrean",
         "iso2":  "er",
         "flagUrl":  "https://flagcdn.com/w320/er.png",
+        "coordinates":  [15, 39],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Еритрея",
@@ -2184,6 +2412,8 @@ const countriesData = [
         "demonym":  "Ethiopian",
         "iso2":  "et",
         "flagUrl":  "https://flagcdn.com/w320/et.png",
+        "coordinates":  [8, 38],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Ефіопія",
@@ -2203,6 +2433,8 @@ const countriesData = [
         "demonym":  "Gabonese",
         "iso2":  "ga",
         "flagUrl":  "https://flagcdn.com/w320/ga.png",
+        "coordinates":  [-1, 11.75],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Габон",
@@ -2222,6 +2454,8 @@ const countriesData = [
         "demonym":  "Gambian",
         "iso2":  "gm",
         "flagUrl":  "https://flagcdn.com/w320/gm.png",
+        "coordinates":  [13.46666666, -16.56666666],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Гамбія",
@@ -2241,6 +2475,8 @@ const countriesData = [
         "demonym":  "Ghanaian",
         "iso2":  "gh",
         "flagUrl":  "https://flagcdn.com/w320/gh.png",
+        "coordinates":  [8, -2],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Гана",
@@ -2260,6 +2496,8 @@ const countriesData = [
         "demonym":  "Guinean",
         "iso2":  "gn",
         "flagUrl":  "https://flagcdn.com/w320/gn.png",
+        "coordinates":  [11, -10],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Гвінея",
@@ -2279,6 +2517,8 @@ const countriesData = [
         "demonym":  "Bissau-Guinean",
         "iso2":  "gw",
         "flagUrl":  "https://flagcdn.com/w320/gw.png",
+        "coordinates":  [12, -15],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Гвінея-Бісау",
@@ -2298,6 +2538,8 @@ const countriesData = [
         "demonym":  "Kenyan",
         "iso2":  "ke",
         "flagUrl":  "https://flagcdn.com/w320/ke.png",
+        "coordinates":  [1, 38],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Кенія",
@@ -2317,6 +2559,8 @@ const countriesData = [
         "demonym":  "Mosotho (singular), Basotho (plural)",
         "iso2":  "ls",
         "flagUrl":  "https://flagcdn.com/w320/ls.png",
+        "coordinates":  [-29.5, 28.5],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Лесото",
@@ -2336,6 +2580,8 @@ const countriesData = [
         "demonym":  "Liberian",
         "iso2":  "lr",
         "flagUrl":  "https://flagcdn.com/w320/lr.png",
+        "coordinates":  [6.5, -9.5],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Ліберія",
@@ -2355,6 +2601,8 @@ const countriesData = [
         "demonym":  "Libyan",
         "iso2":  "ly",
         "flagUrl":  "https://flagcdn.com/w320/ly.png",
+        "coordinates":  [25, 17],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Лівія",
@@ -2374,6 +2622,8 @@ const countriesData = [
         "demonym":  "Madagascan",
         "iso2":  "mg",
         "flagUrl":  "https://flagcdn.com/w320/mg.png",
+        "coordinates":  [-20, 47],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Мадагаскар",
@@ -2393,6 +2643,8 @@ const countriesData = [
         "demonym":  "Malawian",
         "iso2":  "mw",
         "flagUrl":  "https://flagcdn.com/w320/mw.png",
+        "coordinates":  [-13.5, 34],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Малаві",
@@ -2412,6 +2664,8 @@ const countriesData = [
         "demonym":  "Malian",
         "iso2":  "ml",
         "flagUrl":  "https://flagcdn.com/w320/ml.png",
+        "coordinates":  [17, -4],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Малі",
@@ -2431,6 +2685,8 @@ const countriesData = [
         "demonym":  "Mauritanian",
         "iso2":  "mr",
         "flagUrl":  "https://flagcdn.com/w320/mr.png",
+        "coordinates":  [20, -12],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Мавританія",
@@ -2450,6 +2706,8 @@ const countriesData = [
         "demonym":  "Mauritian",
         "iso2":  "mu",
         "flagUrl":  "https://flagcdn.com/w320/mu.png",
+        "coordinates":  [-20.28333333, 57.55],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Маврикій",
@@ -2469,6 +2727,8 @@ const countriesData = [
         "demonym":  "Moroccan",
         "iso2":  "ma",
         "flagUrl":  "https://flagcdn.com/w320/ma.png",
+        "coordinates":  [32, -5],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Марокко",
@@ -2488,6 +2748,8 @@ const countriesData = [
         "demonym":  "Mozambican",
         "iso2":  "mz",
         "flagUrl":  "https://flagcdn.com/w320/mz.png",
+        "coordinates":  [-18.25, 35],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Мозамбік",
@@ -2507,6 +2769,8 @@ const countriesData = [
         "demonym":  "Namibian",
         "iso2":  "na",
         "flagUrl":  "https://flagcdn.com/w320/na.png",
+        "coordinates":  [-22, 17],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Намібія",
@@ -2526,6 +2790,8 @@ const countriesData = [
         "demonym":  "Nigerien",
         "iso2":  "ne",
         "flagUrl":  "https://flagcdn.com/w320/ne.png",
+        "coordinates":  [16, 8],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Нігер",
@@ -2545,6 +2811,8 @@ const countriesData = [
         "demonym":  "Nigerian",
         "iso2":  "ng",
         "flagUrl":  "https://flagcdn.com/w320/ng.png",
+        "coordinates":  [10, 8],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Нігерія",
@@ -2564,6 +2832,8 @@ const countriesData = [
         "demonym":  "Rwandan",
         "iso2":  "rw",
         "flagUrl":  "https://flagcdn.com/w320/rw.png",
+        "coordinates":  [-2, 30],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Руанда",
@@ -2583,6 +2853,8 @@ const countriesData = [
         "demonym":  "Sao Tomean",
         "iso2":  "st",
         "flagUrl":  "https://flagcdn.com/w320/st.png",
+        "coordinates":  [1, 7],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Сан-Томе і Прінсіпі",
@@ -2602,6 +2874,8 @@ const countriesData = [
         "demonym":  "Senegalese",
         "iso2":  "sn",
         "flagUrl":  "https://flagcdn.com/w320/sn.png",
+        "coordinates":  [14, -14],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Сенегал",
@@ -2621,6 +2895,8 @@ const countriesData = [
         "demonym":  "Seychellois",
         "iso2":  "sc",
         "flagUrl":  "https://flagcdn.com/w320/sc.png",
+        "coordinates":  [-4.58333333, 55.66666666],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Сейшельські Острови",
@@ -2640,6 +2916,8 @@ const countriesData = [
         "demonym":  "Sierra Leonean",
         "iso2":  "sl",
         "flagUrl":  "https://flagcdn.com/w320/sl.png",
+        "coordinates":  [8.5, -11.5],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Сьєрра-Леоне",
@@ -2659,6 +2937,8 @@ const countriesData = [
         "demonym":  "Somali [səˈmɑːli]",
         "iso2":  "so",
         "flagUrl":  "https://flagcdn.com/w320/so.png",
+        "coordinates":  [10, 49],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Сомалі",
@@ -2678,6 +2958,8 @@ const countriesData = [
         "demonym":  "South African",
         "iso2":  "za",
         "flagUrl":  "https://flagcdn.com/w320/za.png",
+        "coordinates":  [-29, 24],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Південно-Африканська Республіка",
@@ -2697,6 +2979,8 @@ const countriesData = [
         "demonym":  "South Sudanese",
         "iso2":  "ss",
         "flagUrl":  "https://flagcdn.com/w320/ss.png",
+        "coordinates":  [7, 30],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Південний Судан",
@@ -2716,6 +3000,8 @@ const countriesData = [
         "demonym":  "Sudanese",
         "iso2":  "sd",
         "flagUrl":  "https://flagcdn.com/w320/sd.png",
+        "coordinates":  [15, 30],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Судан",
@@ -2735,6 +3021,8 @@ const countriesData = [
         "demonym":  "Swazi",
         "iso2":  "sz",
         "flagUrl":  "https://flagcdn.com/w320/sz.png",
+        "coordinates":  [-26.5, 31.5],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Есватіні",
@@ -2754,6 +3042,8 @@ const countriesData = [
         "demonym":  "Tanzanian",
         "iso2":  "tz",
         "flagUrl":  "https://flagcdn.com/w320/tz.png",
+        "coordinates":  [-6, 35],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Танзанія",
@@ -2773,6 +3063,8 @@ const countriesData = [
         "demonym":  "Togolese",
         "iso2":  "tg",
         "flagUrl":  "https://flagcdn.com/w320/tg.png",
+        "coordinates":  [8, 1.16666666],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Того",
@@ -2792,6 +3084,8 @@ const countriesData = [
         "demonym":  "Tunisian",
         "iso2":  "tn",
         "flagUrl":  "https://flagcdn.com/w320/tn.png",
+        "coordinates":  [34, 9],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Туніс",
@@ -2811,6 +3105,8 @@ const countriesData = [
         "demonym":  "Ugandan",
         "iso2":  "ug",
         "flagUrl":  "https://flagcdn.com/w320/ug.png",
+        "coordinates":  [1, 32],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Уганда",
@@ -2830,6 +3126,8 @@ const countriesData = [
         "demonym":  "Zambian",
         "iso2":  "zm",
         "flagUrl":  "https://flagcdn.com/w320/zm.png",
+        "coordinates":  [-15, 30],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Замбія",
@@ -2849,6 +3147,8 @@ const countriesData = [
         "demonym":  "Zimbabwean",
         "iso2":  "zw",
         "flagUrl":  "https://flagcdn.com/w320/zw.png",
+        "coordinates":  [-20, 30],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Зімбабве",
@@ -2868,6 +3168,8 @@ const countriesData = [
         "demonym":  "Australian",
         "iso2":  "au",
         "flagUrl":  "https://flagcdn.com/w320/au.png",
+        "coordinates":  [-27, 133],
+        "zoom":  3,
         "translations":  {
                              "uk":  {
                                         "country":  "Австралія",
@@ -2887,6 +3189,8 @@ const countriesData = [
         "demonym":  "Fijian",
         "iso2":  "fj",
         "flagUrl":  "https://flagcdn.com/w320/fj.png",
+        "coordinates":  [-18, 175],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Фіджі",
@@ -2906,6 +3210,8 @@ const countriesData = [
         "demonym":  "I-Kiribati",
         "iso2":  "ki",
         "flagUrl":  "https://flagcdn.com/w320/ki.png",
+        "coordinates":  [1.41666666, 173],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Кірибаті",
@@ -2925,6 +3231,8 @@ const countriesData = [
         "demonym":  "Marshallese",
         "iso2":  "mh",
         "flagUrl":  "https://flagcdn.com/w320/mh.png",
+        "coordinates":  [9, 168],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Маршаллові Острови",
@@ -2944,6 +3252,8 @@ const countriesData = [
         "demonym":  "Micronesian",
         "iso2":  "fm",
         "flagUrl":  "https://flagcdn.com/w320/fm.png",
+        "coordinates":  [6.91666666, 158.25],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Мікронезія",
@@ -2963,6 +3273,8 @@ const countriesData = [
         "demonym":  "Nauruan",
         "iso2":  "nr",
         "flagUrl":  "https://flagcdn.com/w320/nr.png",
+        "coordinates":  [-0.53333333, 166.91666666],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Науру",
@@ -2982,6 +3294,8 @@ const countriesData = [
         "demonym":  "New Zealander",
         "iso2":  "nz",
         "flagUrl":  "https://flagcdn.com/w320/nz.png",
+        "coordinates":  [-41, 174],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Нова Зеландія",
@@ -3001,6 +3315,8 @@ const countriesData = [
         "demonym":  "Palauan",
         "iso2":  "pw",
         "flagUrl":  "https://flagcdn.com/w320/pw.png",
+        "coordinates":  [7.5, 134.5],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Палау",
@@ -3020,6 +3336,8 @@ const countriesData = [
         "demonym":  "Papua New Guinean",
         "iso2":  "pg",
         "flagUrl":  "https://flagcdn.com/w320/pg.png",
+        "coordinates":  [-6, 147],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Папуа-Нова Гвінея",
@@ -3039,6 +3357,8 @@ const countriesData = [
         "demonym":  "Samoan",
         "iso2":  "ws",
         "flagUrl":  "https://flagcdn.com/w320/ws.png",
+        "coordinates":  [-13.58333333, -172.33333333],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Самоа",
@@ -3058,6 +3378,8 @@ const countriesData = [
         "demonym":  "Solomon Islander",
         "iso2":  "sb",
         "flagUrl":  "https://flagcdn.com/w320/sb.png",
+        "coordinates":  [-8, 159],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Соломонові Острови",
@@ -3077,6 +3399,8 @@ const countriesData = [
         "demonym":  "Tongan",
         "iso2":  "to",
         "flagUrl":  "https://flagcdn.com/w320/to.png",
+        "coordinates":  [-20, -175],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Тонга",
@@ -3096,6 +3420,8 @@ const countriesData = [
         "demonym":  "Tuvaluan",
         "iso2":  "tv",
         "flagUrl":  "https://flagcdn.com/w320/tv.png",
+        "coordinates":  [-8, 178],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Тувалу",
@@ -3115,6 +3441,8 @@ const countriesData = [
         "demonym":  "Ni-Vanuatu [niːvanuːˈɑːtuː]",
         "iso2":  "vu",
         "flagUrl":  "https://flagcdn.com/w320/vu.png",
+        "coordinates":  [-16, 167],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Вануату",
@@ -3134,6 +3462,8 @@ const countriesData = [
         "demonym":  "Antiguan, Barbudan",
         "iso2":  "ag",
         "flagUrl":  "https://flagcdn.com/w320/ag.png",
+        "coordinates":  [17.05, -61.8],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Антигуа і Барбуда",
@@ -3153,6 +3483,8 @@ const countriesData = [
         "demonym":  "Argentine, Argentinian",
         "iso2":  "ar",
         "flagUrl":  "https://flagcdn.com/w320/ar.png",
+        "coordinates":  [-34, -64],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Аргентина",
@@ -3172,6 +3504,8 @@ const countriesData = [
         "demonym":  "Bahamian",
         "iso2":  "bs",
         "flagUrl":  "https://flagcdn.com/w320/bs.png",
+        "coordinates":  [24.25, -76],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Багамські Острови",
@@ -3191,6 +3525,8 @@ const countriesData = [
         "demonym":  "Barbadian",
         "iso2":  "bb",
         "flagUrl":  "https://flagcdn.com/w320/bb.png",
+        "coordinates":  [13.16666666, -59.53333333],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Барбадос",
@@ -3210,6 +3546,8 @@ const countriesData = [
         "demonym":  "Belizean",
         "iso2":  "bz",
         "flagUrl":  "https://flagcdn.com/w320/bz.png",
+        "coordinates":  [17.25, -88.75],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Беліз",
@@ -3229,6 +3567,8 @@ const countriesData = [
         "demonym":  "Bolivian",
         "iso2":  "bo",
         "flagUrl":  "https://flagcdn.com/w320/bo.png",
+        "coordinates":  [-17, -65],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Болівія",
@@ -3248,6 +3588,8 @@ const countriesData = [
         "demonym":  "Brazilian",
         "iso2":  "br",
         "flagUrl":  "https://flagcdn.com/w320/br.png",
+        "coordinates":  [-10, -55],
+        "zoom":  3,
         "translations":  {
                              "uk":  {
                                         "country":  "Бразилія",
@@ -3267,6 +3609,8 @@ const countriesData = [
         "demonym":  "Canadian",
         "iso2":  "ca",
         "flagUrl":  "https://flagcdn.com/w320/ca.png",
+        "coordinates":  [60, -95],
+        "zoom":  3,
         "translations":  {
                              "uk":  {
                                         "country":  "Канада",
@@ -3286,6 +3630,8 @@ const countriesData = [
         "demonym":  "Chilean",
         "iso2":  "cl",
         "flagUrl":  "https://flagcdn.com/w320/cl.png",
+        "coordinates":  [-30, -71],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Чилі",
@@ -3305,6 +3651,8 @@ const countriesData = [
         "demonym":  "Colombian",
         "iso2":  "co",
         "flagUrl":  "https://flagcdn.com/w320/co.png",
+        "coordinates":  [4, -72],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Колумбія",
@@ -3324,6 +3672,8 @@ const countriesData = [
         "demonym":  "Costa Rican",
         "iso2":  "cr",
         "flagUrl":  "https://flagcdn.com/w320/cr.png",
+        "coordinates":  [10, -84],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Коста-Рика",
@@ -3343,6 +3693,8 @@ const countriesData = [
         "demonym":  "Cuban",
         "iso2":  "cu",
         "flagUrl":  "https://flagcdn.com/w320/cu.png",
+        "coordinates":  [21.5, -80],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Куба",
@@ -3362,6 +3714,8 @@ const countriesData = [
         "demonym":  "Dominican",
         "iso2":  "dm",
         "flagUrl":  "https://flagcdn.com/w320/dm.png",
+        "coordinates":  [15.41666666, -61.33333333],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Домініка",
@@ -3381,6 +3735,8 @@ const countriesData = [
         "demonym":  "Dominican",
         "iso2":  "do",
         "flagUrl":  "https://flagcdn.com/w320/do.png",
+        "coordinates":  [19, -70.66666666],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Домініканська Республіка",
@@ -3400,6 +3756,8 @@ const countriesData = [
         "demonym":  "Ecuadorian",
         "iso2":  "ec",
         "flagUrl":  "https://flagcdn.com/w320/ec.png",
+        "coordinates":  [-2, -77.5],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Еквадор",
@@ -3419,6 +3777,8 @@ const countriesData = [
         "demonym":  "Salvadoran",
         "iso2":  "sv",
         "flagUrl":  "https://flagcdn.com/w320/sv.png",
+        "coordinates":  [13.83333333, -88.91666666],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Сальвадор",
@@ -3438,6 +3798,8 @@ const countriesData = [
         "demonym":  "Grenadian",
         "iso2":  "gd",
         "flagUrl":  "https://flagcdn.com/w320/gd.png",
+        "coordinates":  [12.11666666, -61.66666666],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Гренада",
@@ -3457,6 +3819,8 @@ const countriesData = [
         "demonym":  "Guatemalan",
         "iso2":  "gt",
         "flagUrl":  "https://flagcdn.com/w320/gt.png",
+        "coordinates":  [15.5, -90.25],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Гватемала",
@@ -3476,6 +3840,8 @@ const countriesData = [
         "demonym":  "Guyanese",
         "iso2":  "gy",
         "flagUrl":  "https://flagcdn.com/w320/gy.png",
+        "coordinates":  [5, -59],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Гайана",
@@ -3495,6 +3861,8 @@ const countriesData = [
         "demonym":  "Haitian [ˈheiʃ(ə)n]",
         "iso2":  "ht",
         "flagUrl":  "https://flagcdn.com/w320/ht.png",
+        "coordinates":  [19, -72.41666666],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Гаїті",
@@ -3514,6 +3882,8 @@ const countriesData = [
         "demonym":  "Honduran",
         "iso2":  "hn",
         "flagUrl":  "https://flagcdn.com/w320/hn.png",
+        "coordinates":  [15, -86.5],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Гондурас",
@@ -3533,6 +3903,8 @@ const countriesData = [
         "demonym":  "Jamaican",
         "iso2":  "jm",
         "flagUrl":  "https://flagcdn.com/w320/jm.png",
+        "coordinates":  [18.25, -77.5],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Ямайка",
@@ -3552,6 +3924,8 @@ const countriesData = [
         "demonym":  "Mexican",
         "iso2":  "mx",
         "flagUrl":  "https://flagcdn.com/w320/mx.png",
+        "coordinates":  [23, -102],
+        "zoom":  4,
         "translations":  {
                              "uk":  {
                                         "country":  "Мексика",
@@ -3571,6 +3945,8 @@ const countriesData = [
         "demonym":  "Nicaraguan",
         "iso2":  "ni",
         "flagUrl":  "https://flagcdn.com/w320/ni.png",
+        "coordinates":  [13, -85],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Нікарагуа",
@@ -3590,6 +3966,8 @@ const countriesData = [
         "demonym":  "Panamanian",
         "iso2":  "pa",
         "flagUrl":  "https://flagcdn.com/w320/pa.png",
+        "coordinates":  [9, -80],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Панама",
@@ -3609,6 +3987,8 @@ const countriesData = [
         "demonym":  "Paraguayan",
         "iso2":  "py",
         "flagUrl":  "https://flagcdn.com/w320/py.png",
+        "coordinates":  [-23, -58],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Парагвай",
@@ -3628,6 +4008,8 @@ const countriesData = [
         "demonym":  "Peruvian",
         "iso2":  "pe",
         "flagUrl":  "https://flagcdn.com/w320/pe.png",
+        "coordinates":  [-10, -76],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Перу",
@@ -3647,6 +4029,8 @@ const countriesData = [
         "demonym":  "Kittitian, Nevisian",
         "iso2":  "kn",
         "flagUrl":  "https://flagcdn.com/w320/kn.png",
+        "coordinates":  [17.33333333, -62.75],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Сент-Кіттс і Невіс",
@@ -3666,6 +4050,8 @@ const countriesData = [
         "demonym":  "Saint Lucian",
         "iso2":  "lc",
         "flagUrl":  "https://flagcdn.com/w320/lc.png",
+        "coordinates":  [13.88333333, -60.96666666],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Сент-Люсія",
@@ -3685,6 +4071,8 @@ const countriesData = [
         "demonym":  "Vincentian",
         "iso2":  "vc",
         "flagUrl":  "https://flagcdn.com/w320/vc.png",
+        "coordinates":  [13.25, -61.2],
+        "zoom":  10,
         "translations":  {
                              "uk":  {
                                         "country":  "Сент-Вінсент і Гренадини",
@@ -3704,6 +4092,8 @@ const countriesData = [
         "demonym":  "Surinamese",
         "iso2":  "sr",
         "flagUrl":  "https://flagcdn.com/w320/sr.png",
+        "coordinates":  [4, -56],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Суринам",
@@ -3723,6 +4113,8 @@ const countriesData = [
         "demonym":  "Trinidadian, Tobagonian",
         "iso2":  "tt",
         "flagUrl":  "https://flagcdn.com/w320/tt.png",
+        "coordinates":  [11, -61],
+        "zoom":  8,
         "translations":  {
                              "uk":  {
                                         "country":  "Тринідад і Тобаго",
@@ -3742,6 +4134,8 @@ const countriesData = [
         "demonym":  "American",
         "iso2":  "us",
         "flagUrl":  "https://flagcdn.com/w320/us.png",
+        "coordinates":  [38, -97],
+        "zoom":  3,
         "translations":  {
                              "uk":  {
                                         "country":  "Сполучені Штати Америки",
@@ -3761,6 +4155,8 @@ const countriesData = [
         "demonym":  "Uruguayan",
         "iso2":  "uy",
         "flagUrl":  "https://flagcdn.com/w320/uy.png",
+        "coordinates":  [-33, -56],
+        "zoom":  6,
         "translations":  {
                              "uk":  {
                                         "country":  "Уругвай",
@@ -3780,6 +4176,8 @@ const countriesData = [
         "demonym":  "Venezuelan",
         "iso2":  "ve",
         "flagUrl":  "https://flagcdn.com/w320/ve.png",
+        "coordinates":  [8, -66],
+        "zoom":  5,
         "translations":  {
                              "uk":  {
                                         "country":  "Венесуела",

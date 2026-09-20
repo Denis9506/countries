@@ -41,7 +41,10 @@
       modalCloseBtnText: "Close",
       footerDesc: "Curated from Capitals of the world dataset. Free and open explorer.",
       speakTitle: "Listen to country pronunciation",
-      speakCapitalTitle: "Listen to capital pronunciation"
+      speakCapitalTitle: "Listen to capital pronunciation",
+      labelLocationMap: "Geographic Location",
+      labelOpenInMaps: "Google Maps",
+      labelResetMap: "Center"
     },
     uk: {
       docTitle: "Країни та столиці світу | 199 Держав",
@@ -68,7 +71,10 @@
       modalCloseBtnText: "Закрити",
       footerDesc: "Створено на основі документу «Capitals of the world». Повністю статичний веб-додаток.",
       speakTitle: "Прослухати вимову країни",
-      speakCapitalTitle: "Прослухати вимову столиці"
+      speakCapitalTitle: "Прослухати вимову столиці",
+      labelLocationMap: "Розташування на карті",
+      labelOpenInMaps: "Google Maps",
+      labelResetMap: "Центр"
     }
   };
 
@@ -135,9 +141,22 @@
   const modalBtnDone = document.getElementById('modalBtnDone');
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalPrevBtn = document.getElementById('modalPrevBtn');
-  const modalNextBtn = document.getElementById('modalNextBtn');
   const speechBtn = document.getElementById('speechBtn');
   const capitalSpeechBtn = document.getElementById('capitalSpeechBtn');
+
+  // Map DOM Elements
+  const labelLocationMap = document.getElementById('labelLocationMap');
+  const modalMapCoords = document.getElementById('modalMapCoords');
+  const modalMapResetBtn = document.getElementById('modalMapResetBtn');
+  const modalExternalMapLink = document.getElementById('modalExternalMapLink');
+  const labelOpenInMaps = document.getElementById('labelOpenInMaps');
+  const labelResetMap = document.getElementById('labelResetMap');
+
+  // Leaflet Map State
+  let leafletMap = null;
+  let currentMarker = null;
+  let currentCoords = [20, 0];
+  let currentZoom = 5;
 
   // --- Helper Functions ---
   function getCountryData(c) {
@@ -151,7 +170,9 @@
         capitalTranscription: c.capitalTranscription,
         flagUrl: c.flagUrl,
         iso2: c.iso2,
-        id: c.id
+        id: c.id,
+        coordinates: c.coordinates || [0, 0],
+        zoom: c.zoom || 5
       };
     }
     return {
@@ -163,7 +184,9 @@
       capitalTranscription: c.capitalTranscription,
       flagUrl: c.flagUrl,
       iso2: c.iso2,
-      id: c.id
+      id: c.id,
+      coordinates: c.coordinates || [0, 0],
+      zoom: c.zoom || 5
     };
   }
 
@@ -208,6 +231,9 @@
     footerDesc.textContent = t.footerDesc;
     speechBtn.title = t.speakTitle;
     if (capitalSpeechBtn) capitalSpeechBtn.title = t.speakCapitalTitle;
+    if (labelLocationMap) labelLocationMap.textContent = t.labelLocationMap;
+    if (labelOpenInMaps) labelOpenInMaps.textContent = t.labelOpenInMaps;
+    if (labelResetMap) labelResetMap.textContent = t.labelResetMap;
 
     renderRegionNav();
     filterAndRenderCountries();
@@ -280,11 +306,11 @@
         const ukDem = (c.translations?.uk?.demonym || '').toLowerCase();
 
         return enCountry.includes(q) ||
-               enCap.includes(q) ||
-               enDem.includes(q) ||
-               ukCountry.includes(q) ||
-               ukCap.includes(q) ||
-               ukDem.includes(q);
+          enCap.includes(q) ||
+          enDem.includes(q) ||
+          ukCountry.includes(q) ||
+          ukCap.includes(q) ||
+          ukDem.includes(q);
       }
       return true;
     });
@@ -390,6 +416,19 @@
     modalBackdrop.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
     modalCard.focus();
+
+    // Invalidate map size so Leaflet renders at full container size
+    setTimeout(() => {
+      if (leafletMap) {
+        leafletMap.invalidateSize();
+        leafletMap.scrollWheelZoom.enable();
+        leafletMap.touchZoom.enable();
+        leafletMap.dragging.enable();
+        if (currentCoords) {
+          leafletMap.setView(currentCoords, currentZoom);
+        }
+      }
+    }, 180);
   }
 
   function populateModal(country) {
@@ -438,6 +477,9 @@
     // ISO & Direct Flag Link
     modalIsoVal.textContent = data.iso2 ? data.iso2.toUpperCase() : 'N/A';
     modalFlagDirectLink.href = data.flagUrl;
+
+    // Interactive Geographic Map update
+    updateCountryMap(country, data);
 
     // Navigation buttons state
     modalPrevBtn.disabled = currentlyOpenIndex <= 0;
@@ -497,6 +539,121 @@
     window.speechSynthesis.speak(utterance);
   }
 
+  // --- Geographic Map (Leaflet) ---
+  function formatCoordinates(lat, lng) {
+    if (typeof lat !== 'number' || typeof lng !== 'number' || isNaN(lat) || isNaN(lng)) {
+      return '';
+    }
+    const latDir = lat >= 0 ? 'N' : 'S';
+    const lngDir = lng >= 0 ? 'E' : 'W';
+    return `${Math.abs(lat).toFixed(2)}° ${latDir}, ${Math.abs(lng).toFixed(2)}° ${lngDir}`;
+  }
+
+  function initCountryMap() {
+    if (typeof L === 'undefined') return;
+    const mapEl = document.getElementById('countryMap');
+    if (!mapEl || leafletMap) return;
+
+    leafletMap = L.map(mapEl, {
+      center: [20, 0],
+      zoom: 3,
+      scrollWheelZoom: true, // Enabled: roll mouse wheel to zoom in and out
+      touchZoom: true,       // Enabled: pinch-to-zoom on phones & touch devices
+      dragging: true,        // Enabled: swipe/drag to pan
+      doubleClickZoom: true, // Enabled: double click to zoom in
+      boxZoom: true,
+      keyboard: true,
+      zoomControl: true,
+      attributionControl: true
+    });
+
+    // Google Maps Roadmap tile layer (explicit English language labels)
+    const googleRoadmap = L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&hl=en&gl=US&x={x}&y={y}&z={z}', {
+      subdomains: ['0', '1', '2', '3'],
+      maxZoom: 20,
+      attribution: '&copy; <a href="https://www.google.com/maps" target="_blank" rel="noreferrer">Google Maps</a>'
+    });
+
+    // Fallback to OpenStreetMap standard tiles if Google tile server is unreachable
+    const osmFallback = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>'
+    });
+
+    googleRoadmap.on('tileerror', function () {
+      if (!leafletMap.hasLayer(osmFallback)) {
+        osmFallback.addTo(leafletMap);
+      }
+    });
+
+    googleRoadmap.addTo(leafletMap);
+
+    // Ensure map activates scroll zoom immediately on click or touch
+    mapEl.addEventListener('click', () => {
+      if (leafletMap) {
+        leafletMap.scrollWheelZoom.enable();
+      }
+    });
+
+    mapEl.addEventListener('touchstart', () => {
+      if (leafletMap) {
+        leafletMap.dragging.enable();
+        leafletMap.touchZoom.enable();
+      }
+    }, { passive: true });
+  }
+
+  function updateCountryMap(country, data) {
+    const coords = (country && country.coordinates && country.coordinates.length === 2)
+      ? country.coordinates
+      : [20, 0];
+    const zoom = (country && country.zoom) ? country.zoom : 5;
+    currentCoords = coords;
+    currentZoom = zoom;
+
+    if (modalMapCoords) {
+      modalMapCoords.textContent = formatCoordinates(coords[0], coords[1]);
+    }
+
+    if (modalExternalMapLink) {
+      const query = encodeURIComponent(`${data.country} ${data.capital && data.capital !== '—' ? data.capital : ''}`);
+      modalExternalMapLink.href = `https://www.google.com/maps/search/?api=1&query=${query}`;
+    }
+
+    if (typeof L === 'undefined') return;
+    initCountryMap();
+    if (!leafletMap) return;
+
+    // Glowing orange pulsating pin marker
+    const pulseIcon = L.divIcon({
+      className: 'map-pulse-marker',
+      html: '<div class="map-marker-pulse"></div><div class="map-marker-pin"></div>',
+      iconSize: [24, 24],
+      iconAnchor: [12, 12],
+      popupAnchor: [0, -12]
+    });
+
+    if (currentMarker) {
+      currentMarker.setLatLng(coords);
+    } else {
+      currentMarker = L.marker(coords, { icon: pulseIcon }).addTo(leafletMap);
+    }
+
+    const popupContent = `
+      <div class="map-popup-inner">
+        <div class="map-popup-title">${data.country}</div>
+        ${data.capital && data.capital !== '—' ? `<div class="map-popup-subtitle">🏛️ ${data.capital}</div>` : ''}
+      </div>
+    `;
+    currentMarker.bindPopup(popupContent);
+
+    leafletMap.invalidateSize();
+    leafletMap.flyTo(coords, zoom, {
+      duration: 0.9,
+      easeLinearity: 0.25
+    });
+  }
+
   // --- Event Listeners ---
 
   // Language Toggle
@@ -549,6 +706,17 @@
   modalNextBtn.addEventListener('click', showNextCountry);
   speechBtn.addEventListener('click', speakCountryName);
   if (capitalSpeechBtn) capitalSpeechBtn.addEventListener('click', speakCapitalName);
+
+  if (modalMapResetBtn) {
+    modalMapResetBtn.addEventListener('click', () => {
+      if (leafletMap && currentCoords) {
+        leafletMap.flyTo(currentCoords, currentZoom, { duration: 0.6 });
+        if (currentMarker) {
+          currentMarker.openPopup();
+        }
+      }
+    });
+  }
 
   // Keyboard Shortcuts
   window.addEventListener('keydown', (e) => {

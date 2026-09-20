@@ -11,6 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -213,6 +216,37 @@
         </div>
       </div>
 
+      <!-- Interactive Geographic Map Section -->
+      <div class="modal-map-section" id="modalMapSection">
+        <div class="modal-map-header">
+          <div class="modal-map-title-row">
+            <span class="detail-icon" aria-hidden="true">📍</span>
+            <span class="modal-map-heading" id="labelLocationMap">Geographic Location</span>
+            <span class="modal-map-coords" id="modalMapCoords">0.00° N, 0.00° E</span>
+          </div>
+          <div class="modal-map-actions">
+            <button class="map-reset-btn" id="modalMapResetBtn" type="button" title="Center Map" aria-label="Center map on country">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <span id="labelResetMap">Center</span>
+            </button>
+            <a class="map-link-btn" id="modalExternalMapLink" href="#" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">
+              <span id="labelOpenInMaps">Google Maps</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="modal-map-frame">
+          <div id="countryMap" class="modal-map-canvas" role="region" aria-label="Country location interactive map"></div>
+        </div>
+      </div>
+
       <!-- Modal Footer -->
       <div class="modal-footer">
         <span class="modal-tip-text" id="modalTipText">Keyboard shortcuts: ← Previous | → Next | Esc to Close</span>
@@ -235,6 +269,9 @@
       </div>
     </div>
   </footer>
+
+  <!-- Leaflet Map JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Load Database and Application Scripts -->
   <script src="data.js"></script>
