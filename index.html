@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World Countries & Capitals Explorer | Країни та столиці світу</title>
-  <meta name="description" content="Explore world countries, capitals, phonetic pronunciations, demonyms, and flags across 5 continental regions. Available in English and Ukrainian.">
-  
+  <meta name="description"
+    content="Explore world countries, capitals, phonetic pronunciations, demonyms, and flags across 5 continental regions. Available in English and Ukrainian.">
+
   <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <!-- Leaflet Map CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- Ambient background glow elements -->
   <div class="bg-glow glow-1" aria-hidden="true"></div>
@@ -25,9 +31,11 @@
   <!-- Header -->
   <header class="site-header" id="siteHeader">
     <div class="header-container">
-      <div class="logo-area">
+      <div class="logo-area" id="headerLogoBrand" role="button" tabindex="0"
+        title="Return to all countries / На головну" aria-label="Return to all countries">
         <div class="logo-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="2" y1="12" x2="22" y2="12"></line>
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
@@ -40,6 +48,26 @@
       </div>
 
       <div class="header-actions">
+        <!-- Quiz Trainer Shortcut Button -->
+        <button class="quiz-nav-btn" id="headerQuizBtn" type="button" aria-label="Open Quiz Trainer"
+          title="Geography Quiz">
+          <span class="quiz-nav-icon" aria-hidden="true">🎯</span>
+          <span class="quiz-nav-text" id="headerQuizText">Тренажер</span>
+        </button>
+
+        <!-- Bookmarks Shortcut Button -->
+        <button class="bookmarks-nav-btn" id="headerBookmarksBtn" type="button" aria-label="View bookmarked countries"
+          title="View bookmarks">
+          <svg class="header-star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+            </polygon>
+          </svg>
+          <span class="bookmarks-count" id="headerBookmarksCount">0</span>
+          <span class="bookmarks-label" id="headerBookmarksLabel">Bookmarks</span>
+        </button>
+
         <!-- Quick stats badge -->
         <div class="stats-pill" id="statsPill">
           <span class="stats-count" id="countriesTotalCount">199</span>
@@ -47,7 +75,8 @@
         </div>
 
         <!-- Language Switcher Toggle -->
-        <button class="lang-toggle-btn" id="langToggleBtn" type="button" aria-label="Switch language between English and Ukrainian">
+        <button class="lang-toggle-btn" id="langToggleBtn" type="button"
+          aria-label="Switch language between English and Ukrainian">
           <span class="lang-flag" id="langFlag">🇺🇦</span>
           <span class="lang-text" id="langText">Українська</span>
         </button>
@@ -55,82 +84,393 @@
     </div>
   </header>
 
-  <!-- Hero & Controls Section -->
+  <!-- Main Content: Views Wrapper -->
   <main class="main-content">
-    <section class="hero-section">
-      <div class="hero-content">
-        <span class="hero-badge" id="heroBadge">Global Compendium</span>
-        <h2 class="hero-heading" id="heroHeading">Explore Nations Across the Globe</h2>
-        <p class="hero-description" id="heroDescription">
-          Discover countries grouped by region with official capitals, phonetic pronunciations, demonyms, and national flags.
-        </p>
-      </div>
-
-      <!-- Controls: Search and Filter Bar -->
-      <div class="controls-wrapper">
-        <div class="search-box">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <input 
-            type="text" 
-            id="searchInput" 
-            class="search-input" 
-            placeholder="Search by country, capital, or demonym..." 
-            aria-label="Search countries"
-            autocomplete="off"
-            spellcheck="false"
-          >
-          <button class="clear-search-btn" id="clearSearchBtn" type="button" aria-label="Clear search" title="Clear search">
-            &times;
-          </button>
+    <!-- View 1: Countries & Capitals Explorer -->
+    <div class="app-view" id="explorerView">
+      <section class="hero-section">
+        <div class="hero-content">
+          <span class="hero-badge" id="heroBadge">Global Compendium</span>
+          <h2 class="hero-heading" id="heroHeading">Explore Nations Across the Globe</h2>
+          <p class="hero-description" id="heroDescription">
+            Discover countries grouped by region with official capitals, phonetic pronunciations, demonyms, and national
+            flags.
+          </p>
         </div>
 
-        <!-- Region Navigation Pills -->
-        <nav class="region-nav" id="regionNav" aria-label="Region filters">
-          <!-- Populated dynamically via JS -->
-        </nav>
+        <!-- Controls: Search and Filter Bar -->
+        <div class="controls-wrapper">
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="searchInput" class="search-input"
+              placeholder="Search by country, capital, or demonym..." aria-label="Search countries" autocomplete="off"
+              spellcheck="false">
+            <button class="clear-search-btn" id="clearSearchBtn" type="button" aria-label="Clear search"
+              title="Clear search">
+              &times;
+            </button>
+          </div>
+
+          <!-- Region Navigation Pills -->
+          <nav class="region-nav" id="regionNav" aria-label="Region filters">
+            <!-- Populated dynamically via JS -->
+          </nav>
+        </div>
+
+        <!-- Active search status / results count -->
+        <div class="results-bar" id="resultsBar">
+          <span id="resultsCountText">Showing 199 countries</span>
+        </div>
+      </section>
+
+      <!-- Region Sections Container -->
+      <section class="regions-container" id="regionsContainer">
+        <!-- Dynamic region groups with country cards -->
+      </section>
+
+      <!-- Empty search state -->
+      <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon" aria-hidden="true">🔍</div>
+        <h3 class="empty-title" id="emptyTitle">No Countries Found</h3>
+        <p class="empty-desc" id="emptyDesc">Try adjusting your search query or switching to all regions.</p>
+        <button class="btn-reset-filter" id="btnResetFilter" type="button">Reset Filters</button>
       </div>
-
-      <!-- Active search status / results count -->
-      <div class="results-bar" id="resultsBar">
-        <span id="resultsCountText">Showing 199 countries</span>
-      </div>
-    </section>
-
-    <!-- Region Sections Container -->
-    <section class="regions-container" id="regionsContainer">
-      <!-- Dynamic region groups with country cards -->
-    </section>
-
-    <!-- Empty search state -->
-    <div class="empty-state hidden" id="emptyState">
-      <div class="empty-icon" aria-hidden="true">🔍</div>
-      <h3 class="empty-title" id="emptyTitle">No Countries Found</h3>
-      <p class="empty-desc" id="emptyDesc">Try adjusting your search query or switching to all regions.</p>
-      <button class="btn-reset-filter" id="btnResetFilter" type="button">Reset Filters</button>
     </div>
+
   </main>
 
+  <!-- Quiz Trainer Modal Dialog Overlay -->
+  <div class="quiz-modal-backdrop hidden" id="quizModalBackdrop" role="dialog" aria-modal="true"
+    aria-labelledby="quizModalTitle">
+    <div class="quiz-modal-card" id="quizModalCard">
+      <!-- Quiz Modal Header Bar -->
+      <div class="quiz-modal-header">
+        <div class="quiz-modal-title-group">
+          <span class="quiz-modal-icon" aria-hidden="true">🎯</span>
+          <h2 class="quiz-modal-title" id="quizModalTitle">Geography Quiz Trainer</h2>
+        </div>
+        <button class="modal-close-btn quiz-modal-close-btn" id="quizModalCloseBtn" type="button"
+          title="Close Quiz (Esc)" aria-label="Close quiz">
+          &times;
+        </button>
+      </div>
+
+      <!-- Quiz Modal Body -->
+      <div class="quiz-modal-body">
+        <!-- Screen 1: Quiz Setup / Configuration -->
+        <section class="quiz-setup-section" id="quizSetupSection">
+          <div class="quiz-hero-content">
+            <span class="hero-badge" id="quizHeroBadge">Interactive Quiz Trainer</span>
+            <h3 class="hero-heading" id="quizHeroHeading">Test Your Geography Knowledge</h3>
+            <p class="hero-description" id="quizHeroDescription">
+              Practice flags, capitals, and countries with instant animated feedback and detailed geographic dossiers.
+            </p>
+          </div>
+
+          <div class="quiz-config-card">
+            <!-- Step 1: Select Mode -->
+            <div class="quiz-config-group">
+              <label class="quiz-config-label">
+                <span class="config-step-num">1</span>
+                <span id="labelSelectMode">Choose Quiz Mode</span>
+              </label>
+              <div class="quiz-modes-grid" id="quizModesGrid">
+                <!-- Mode 1: Guess country by flag -->
+                <button class="quiz-mode-card active" type="button" data-mode="flag_to_country">
+                  <div class="mode-icon" aria-hidden="true">🚩</div>
+                  <div class="mode-info">
+                    <h4 class="mode-title" id="modeTitle1">Country by Flag</h4>
+                    <p class="mode-desc" id="modeDesc1">Guess country name from options</p>
+                  </div>
+                </button>
+                <!-- Mode 2: Guess capital by flag -->
+                <button class="quiz-mode-card" type="button" data-mode="flag_to_capital">
+                  <div class="mode-icon" aria-hidden="true">🏛️</div>
+                  <div class="mode-info">
+                    <h4 class="mode-title" id="modeTitle2">Capital by Flag</h4>
+                    <p class="mode-desc" id="modeDesc2">Guess capital city from options</p>
+                  </div>
+                </button>
+                <!-- Mode 3: Guess capital by country name -->
+                <button class="quiz-mode-card" type="button" data-mode="country_to_capital">
+                  <div class="mode-icon" aria-hidden="true">🏙️</div>
+                  <div class="mode-info">
+                    <h4 class="mode-title" id="modeTitle3">Capital by Country</h4>
+                    <p class="mode-desc" id="modeDesc3">Guess capital from country name</p>
+                  </div>
+                </button>
+                <!-- Mode 4: Guess flag by country name -->
+                <button class="quiz-mode-card" type="button" data-mode="country_to_flag">
+                  <div class="mode-icon" aria-hidden="true">🎨</div>
+                  <div class="mode-info">
+                    <h4 class="mode-title" id="modeTitle4">Flag by Country</h4>
+                    <p class="mode-desc" id="modeDesc4">Choose correct flag from options</p>
+                  </div>
+                </button>
+                <!-- Mode 5: Guess country by capital name -->
+                <button class="quiz-mode-card" type="button" data-mode="capital_to_country">
+                  <div class="mode-icon" aria-hidden="true">🗺️</div>
+                  <div class="mode-info">
+                    <h4 class="mode-title" id="modeTitle5">Country by Capital</h4>
+                    <p class="mode-desc" id="modeDesc5">Guess country from capital city</p>
+                  </div>
+                </button>
+                <!-- Mode 6: Mixed challenge -->
+                <button class="quiz-mode-card" type="button" data-mode="mixed">
+                  <div class="mode-icon" aria-hidden="true">🎲</div>
+                  <div class="mode-info">
+                    <h4 class="mode-title" id="modeTitle6">Mixed Challenge</h4>
+                    <p class="mode-desc" id="modeDesc6">Random mix of all modes</p>
+                  </div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Select Region -->
+            <div class="quiz-config-group">
+              <label class="quiz-config-label">
+                <span class="config-step-num">2</span>
+                <span id="labelSelectRegion">Select World Region</span>
+              </label>
+              <div class="quiz-chip-group" id="quizRegionChips">
+                <button class="quiz-chip-btn active" type="button" data-region="all">All Regions</button>
+                <button class="quiz-chip-btn" type="button" data-region="Europe">Europe</button>
+                <button class="quiz-chip-btn" type="button" data-region="Asia">Asia</button>
+                <button class="quiz-chip-btn" type="button" data-region="Africa">Africa</button>
+                <button class="quiz-chip-btn" type="button" data-region="Australia and Oceania">Australia &
+                  Oceania</button>
+                <button class="quiz-chip-btn" type="button" data-region="North and South America">Americas</button>
+                <button class="quiz-chip-btn quiz-chip-bookmarks" type="button" data-region="bookmarks">
+                  ⭐ <span id="quizBookmarksLabel">Bookmarks</span> (<span id="quizBookmarksCount">0</span>)
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3: Select Question Count -->
+            <div class="quiz-config-group">
+              <label class="quiz-config-label">
+                <span class="config-step-num">3</span>
+                <span id="labelSelectCount">Number of Questions</span>
+              </label>
+              <div class="quiz-count-group" id="quizCountGroup">
+                <button class="quiz-count-btn" type="button" data-count="5">5</button>
+                <button class="quiz-count-btn active" type="button" data-count="10">10</button>
+                <button class="quiz-count-btn" type="button" data-count="15">15</button>
+                <button class="quiz-count-btn" type="button" data-count="20">20</button>
+              </div>
+            </div>
+
+            <!-- Step 4: Select Answer Choices Count (3 to 6) -->
+            <div class="quiz-config-group">
+              <div class="quiz-choices-header">
+                <label class="quiz-config-label">
+                  <span class="config-step-num">4</span>
+                  <span id="labelSelectChoices">Number of Answer Choices</span>
+                </label>
+                <span class="choices-val-badge" id="choicesValBadge">4 choices</span>
+              </div>
+              <div class="choices-slider-container">
+                <div class="choices-slider-track-wrap">
+                  <input type="range" class="quiz-choices-range" id="quizChoicesRange" min="3" max="6" step="1"
+                    value="4" aria-label="Number of answer choices">
+                </div>
+                <div class="quiz-choices-ticks" id="quizChoicesTicks">
+                  <button type="button" class="quiz-choice-tick-btn" data-choices="3">
+                    <span class="tick-num">3</span>
+                  </button>
+                  <button type="button" class="quiz-choice-tick-btn active" data-choices="4">
+                    <span class="tick-num">4</span>
+                  </button>
+                  <button type="button" class="quiz-choice-tick-btn" data-choices="5">
+                    <span class="tick-num">5</span>
+                  </button>
+                  <button type="button" class="quiz-choice-tick-btn" data-choices="6">
+                    <span class="tick-num">6</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Start Action Bar -->
+            <div class="quiz-start-bar">
+              <button class="btn-start-quiz" id="btnStartQuiz" type="button">
+                <span id="btnStartQuizText">Start Quiz</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Screen 2: Active Quiz Session (Compact & Zero-Scroll) -->
+        <section class="quiz-active-section hidden" id="quizActiveSection">
+          <!-- Top status bar -->
+          <div class="quiz-top-bar">
+            <button class="quiz-back-btn" id="quizExitBtn" type="button" title="Back to Setup"
+              aria-label="Back to Setup">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              <span id="quizBackText">Setup</span>
+            </button>
+
+            <div class="quiz-progress-wrap">
+              <div class="quiz-progress-info">
+                <span class="quiz-q-counter" id="quizQCounter">Question 1 of 10</span>
+                <span class="quiz-score-pill" id="quizScorePill">Score: <strong id="quizScoreVal">0</strong></span>
+              </div>
+              <div class="quiz-progress-track">
+                <div class="quiz-progress-fill" id="quizProgressFill" style="width: 10%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question Container Card -->
+          <div class="quiz-card" id="quizQuestionCard">
+            <div class="quiz-card-header">
+              <span class="quiz-mode-badge" id="quizModeBadge">Mode</span>
+              <span class="quiz-region-badge" id="quizActiveRegionBadge">All Regions</span>
+            </div>
+
+            <h3 class="quiz-question-prompt" id="quizQuestionPrompt">Question prompt</h3>
+
+            <!-- Visual Prompt Target (Compact Flag image or country/capital title) -->
+            <div class="quiz-prompt-target" id="quizPromptTarget"></div>
+
+            <!-- Answer Choices (3 to 6 buttons) -->
+            <div class="quiz-options-container" id="quizOptionsContainer"></div>
+
+            <!-- Inline Action Bar (Instant feedback + Next Question button - NO SCROLL NEEDED) -->
+            <div class="quiz-inline-action-bar hidden" id="quizInlineActionBar">
+              <div class="quiz-inline-feedback" id="quizInlineFeedback">
+                <div class="inline-feedback-icon" id="feedbackIcon">🎉</div>
+                <div class="inline-feedback-texts">
+                  <div class="inline-feedback-title" id="feedbackTitle">Correct!</div>
+                  <div class="inline-feedback-subtitle" id="feedbackSubtitle">Details about this country:</div>
+                </div>
+              </div>
+              <button class="btn-next-question" id="btnNextQuestion" type="button">
+                <span id="btnNextQuestionText">Next Question →</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Screen 3: Quiz Results Summary & Detailed Breakdown Table -->
+        <section class="quiz-results-section hidden" id="quizResultsSection">
+          <div class="quiz-results-card">
+            <div class="results-badge" id="resultsBadge">Test Completed</div>
+
+            <div class="score-circle-wrapper">
+              <div class="score-circle" id="scoreCircle">
+                <span class="score-number" id="resultsScoreNumber">8/10</span>
+                <span class="score-percent" id="resultsScorePercent">80%</span>
+              </div>
+            </div>
+
+            <h3 class="results-heading" id="resultsHeading">Great Job!</h3>
+            <p class="results-description" id="resultsDescription">You have answered 8 out of 10 questions correctly.
+            </p>
+
+            <!-- Results Key Stats Row -->
+            <div class="quiz-results-stats-row" id="quizResultsStatsRow">
+              <div class="stat-box stat-correct">
+                <span class="stat-box-val" id="statCorrectVal">8</span>
+                <span class="stat-box-lbl" id="statCorrectLbl">Correct</span>
+              </div>
+              <div class="stat-box stat-wrong">
+                <span class="stat-box-val" id="statWrongVal">2</span>
+                <span class="stat-box-lbl" id="statWrongLbl">Mistakes</span>
+              </div>
+              <div class="stat-box stat-accuracy">
+                <span class="stat-box-val" id="statAccuracyVal">80%</span>
+                <span class="stat-box-lbl" id="statAccuracyLbl">Accuracy</span>
+              </div>
+            </div>
+
+            <!-- Full Breakdown Table of Answered Questions with Color Highlighting -->
+            <div class="quiz-results-table-section">
+              <div class="results-table-header-wrap">
+                <h4 class="results-table-title" id="resultsTableTitle">Question by Question Breakdown</h4>
+              </div>
+              <div class="quiz-table-scroll-container">
+                <table class="quiz-results-table" id="quizResultsTable">
+                  <thead>
+                    <tr>
+                      <th class="col-num">#</th>
+                      <th class="col-target" id="thQuestion">Question / Target</th>
+                      <th class="col-user" id="thYourAnswer">Your Answer</th>
+                      <th class="col-correct" id="thCorrectAnswer">Correct Answer</th>
+                      <th class="col-status" id="thStatus">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="quizResultsTableBody">
+                    <!-- Populated dynamically via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="results-actions">
+              <button class="btn-quiz-primary" id="btnRetryQuiz" type="button">
+                <span id="btnRetryText">Try Again</span>
+              </button>
+              <button class="btn-quiz-secondary" id="btnChangeSettings" type="button">
+                <span id="btnSettingsText">Change Settings</span>
+              </button>
+              <button class="btn-quiz-ghost" id="btnReturnExplorer" type="button">
+                <span id="btnReturnText">Close Trainer</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
   <!-- Expanded Country Card / Modal Dialog -->
-  <div class="modal-backdrop hidden" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalCountryName">
+  <div class="modal-backdrop hidden" id="modalBackdrop" role="dialog" aria-modal="true"
+    aria-labelledby="modalCountryName">
     <div class="modal-card" id="modalCard">
       <!-- Top header bar in modal -->
       <div class="modal-header">
         <div class="modal-region-badge" id="modalRegionBadge">Europe</div>
         <div class="modal-actions-top">
-          <button class="modal-nav-btn" id="modalPrevBtn" type="button" title="Previous Country (Left Arrow)" aria-label="Previous Country">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button class="modal-nav-btn modal-bookmark-btn" id="modalBookmarkBtn" type="button" title="Bookmark country"
+            aria-label="Bookmark country">
+            <svg class="modal-star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+          </button>
+          <button class="modal-nav-btn" id="modalPrevBtn" type="button" title="Previous Country (Left Arrow)"
+            aria-label="Previous Country">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </button>
-          <button class="modal-nav-btn" id="modalNextBtn" type="button" title="Next Country (Right Arrow)" aria-label="Next Country">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button class="modal-nav-btn" id="modalNextBtn" type="button" title="Next Country (Right Arrow)"
+            aria-label="Next Country">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
-          <button class="modal-close-btn" id="modalCloseBtn" type="button" title="Close (Escape)" aria-label="Close details">
+          <button class="modal-close-btn" id="modalCloseBtn" type="button" title="Close (Escape)"
+            aria-label="Close details">
             &times;
           </button>
         </div>
@@ -138,13 +478,7 @@
 
       <!-- Flag Hero Preview -->
       <div class="modal-flag-wrapper">
-        <img 
-          id="modalFlagImg" 
-          class="modal-flag-img" 
-          src="" 
-          alt="Country Flag" 
-          loading="lazy"
-        >
+        <img id="modalFlagImg" class="modal-flag-img" src="" alt="Country Flag" loading="lazy">
         <div class="modal-flag-overlay" aria-hidden="true"></div>
       </div>
 
@@ -155,8 +489,10 @@
           <div class="modal-ipa-pill" id="modalCountryTransWrap">
             <span class="ipa-symbol" aria-hidden="true">🗣️</span>
             <span class="modal-transcription" id="modalCountryTrans">[transcription]</span>
-            <button class="speech-btn" id="speechBtn" type="button" title="Listen to pronunciation" aria-label="Pronounce country name">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <button class="speech-btn" id="speechBtn" type="button" title="Listen to pronunciation"
+              aria-label="Pronounce country name">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
                 <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                 <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
               </svg>
@@ -175,8 +511,10 @@
           </div>
           <div class="detail-value-row">
             <div class="detail-value" id="modalCapitalVal">Capital</div>
-            <button class="speech-btn capital-speech-btn" id="capitalSpeechBtn" type="button" title="Listen to capital pronunciation" aria-label="Pronounce capital city">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <button class="speech-btn capital-speech-btn" id="capitalSpeechBtn" type="button"
+              title="Listen to capital pronunciation" aria-label="Pronounce capital city">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
                 <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                 <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
               </svg>
@@ -225,16 +563,20 @@
             <span class="modal-map-coords" id="modalMapCoords">0.00° N, 0.00° E</span>
           </div>
           <div class="modal-map-actions">
-            <button class="map-reset-btn" id="modalMapResetBtn" type="button" title="Center Map" aria-label="Center map on country">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <button class="map-reset-btn" id="modalMapResetBtn" type="button" title="Center Map"
+              aria-label="Center map on country">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"></circle>
                 <circle cx="12" cy="12" r="3"></circle>
               </svg>
               <span id="labelResetMap">Center</span>
             </button>
-            <a class="map-link-btn" id="modalExternalMapLink" href="#" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">
+            <a class="map-link-btn" id="modalExternalMapLink" href="#" target="_blank" rel="noopener noreferrer"
+              title="Open in Google Maps">
               <span id="labelOpenInMaps">Google Maps</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <line x1="10" y1="14" x2="21" y2="3"></line>
@@ -243,7 +585,8 @@
           </div>
         </div>
         <div class="modal-map-frame">
-          <div id="countryMap" class="modal-map-canvas" role="region" aria-label="Country location interactive map"></div>
+          <div id="countryMap" class="modal-map-canvas" role="region" aria-label="Country location interactive map">
+          </div>
         </div>
       </div>
 
@@ -270,11 +613,16 @@
     </div>
   </footer>
 
+  <!-- Floating Toast Notification for Bookmark Actions -->
+  <div class="toast-notification" id="bookmarkToast" role="status" aria-live="polite"></div>
+
   <!-- Leaflet Map JS -->
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Load Database and Application Scripts -->
   <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
