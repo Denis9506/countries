@@ -76,9 +76,9 @@
 
         <!-- Language Switcher Toggle -->
         <button class="lang-toggle-btn" id="langToggleBtn" type="button"
-          aria-label="Switch language between English and Ukrainian">
-          <span class="lang-flag" id="langFlag">🇺🇦</span>
-          <span class="lang-text" id="langText">Українська</span>
+          aria-label="Switch language" title="Switch language">
+          <span class="lang-icon" aria-hidden="true">🌐</span>
+          <span class="lang-text" id="langText">UA</span>
         </button>
       </div>
     </div>
@@ -445,7 +445,8 @@
       <!-- Top header bar in modal -->
       <div class="modal-header">
         <div class="modal-region-badge" id="modalRegionBadge">Europe</div>
-        <div class="modal-actions-top">
+        <!-- Center Bookmark Star Button -->
+        <div class="modal-header-center">
           <button class="modal-nav-btn modal-bookmark-btn" id="modalBookmarkBtn" type="button" title="Bookmark country"
             aria-label="Bookmark country">
             <svg class="modal-star-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -454,6 +455,14 @@
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
+          </button>
+        </div>
+
+        <div class="modal-actions-top">
+          <!-- In-Modal Translation Toggle Button -->
+          <button class="modal-nav-btn modal-lang-btn" id="modalLangBtn" type="button"
+            title="Switch language / Перемкнути мову" aria-label="Switch language">
+            <span class="modal-lang-code" id="modalLangCode">UA</span>
           </button>
           <button class="modal-nav-btn" id="modalPrevBtn" type="button" title="Previous Country (Left Arrow)"
             aria-label="Previous Country">

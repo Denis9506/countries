@@ -21,8 +21,10 @@
       logoTitle: "TerraAtlas",
       logoSubtitle: "Capitals, Pronunciations & Demonyms",
       statsLabel: "Countries",
-      langToggleText: "Українська",
+      langToggleText: "UA",
       langToggleFlag: "🇺🇦",
+      langToggleTitle: "Перемкнути на українську (UA)",
+      modalLangTitle: "Перекласти українською (UA)",
       heroBadge: "Global Compendium",
       heroHeading: "Explore Nations Across the Globe",
       heroDescription: "Discover countries grouped by region with official capitals, phonetic pronunciations, demonyms, and national flags.",
@@ -113,8 +115,10 @@
       logoTitle: "ТерраАтлас",
       logoSubtitle: "Столиці, транскрипції та назви жителів",
       statsLabel: "Країн",
-      langToggleText: "English",
+      langToggleText: "EN",
       langToggleFlag: "🇬🇧",
+      langToggleTitle: "Switch to English (EN)",
+      modalLangTitle: "Translate to English (EN)",
       heroBadge: "Світовий довідник",
       heroHeading: "Досліджуйте держави та народи світу",
       heroDescription: "Країни за регіонами з офіційними столицями, фонетичною транскрипцією, назвами мешканців та національними прапорами.",
@@ -277,6 +281,9 @@
   const modalCloseBtn = document.getElementById('modalCloseBtn');
   const modalPrevBtn = document.getElementById('modalPrevBtn');
   const modalBookmarkBtn = document.getElementById('modalBookmarkBtn');
+  const modalLangBtn = document.getElementById('modalLangBtn');
+  const modalLangFlag = document.getElementById('modalLangFlag');
+  const modalLangCode = document.getElementById('modalLangCode');
   const speechBtn = document.getElementById('speechBtn');
   const capitalSpeechBtn = document.getElementById('capitalSpeechBtn');
   const bookmarkToast = document.getElementById('bookmarkToast');
@@ -567,8 +574,18 @@
     logoTitle.textContent = t.logoTitle;
     logoSubtitle.textContent = t.logoSubtitle;
     countriesTotalLabel.textContent = t.statsLabel;
-    langFlag.textContent = t.langToggleFlag;
-    langText.textContent = t.langToggleText;
+    if (langFlag) langFlag.textContent = t.langToggleFlag;
+    if (langText) langText.textContent = t.langToggleText;
+    if (langToggleBtn) {
+      langToggleBtn.title = t.langToggleTitle;
+      langToggleBtn.setAttribute('aria-label', t.langToggleTitle);
+    }
+
+    if (modalLangCode) modalLangCode.textContent = t.langToggleText;
+    if (modalLangBtn) {
+      modalLangBtn.title = t.modalLangTitle;
+      modalLangBtn.setAttribute('aria-label', t.modalLangTitle);
+    }
 
     if (headerBookmarksLabel) headerBookmarksLabel.textContent = t.bookmarks;
     if (headerBookmarksBtn) headerBookmarksBtn.title = t.bookmarks;
@@ -1156,12 +1173,20 @@
 
   // --- Event Listeners ---
 
-  // Language Toggle
-  langToggleBtn.addEventListener('click', () => {
+  // Language Toggle function (used by both header button and modal button)
+  function toggleLanguage() {
     currentLang = currentLang === 'en' ? 'uk' : 'en';
     localStorage.setItem('terra_atlas_lang', currentLang);
     applyLanguage();
-  });
+  }
+
+  // Language Toggle
+  if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', toggleLanguage);
+  }
+  if (modalLangBtn) {
+    modalLangBtn.addEventListener('click', toggleLanguage);
+  }
 
   // Search Input
   searchInput.addEventListener('input', (e) => {
